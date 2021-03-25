@@ -1,0 +1,11 @@
+{{#if loggedIn}}
+  <div class="buttons">
+    <button class="button is-danger is-large">Start Your Journey</button>
+    {{!-- Add path to get to first level of game href="/firstlevel" --}}
+  </div>
+{{else}}
+    <a href="/login">Login</a>
+    <a href="/signup">Sign-Up</a>
+{{/if}}
+  {{!-- Add Image --}}
+  {{!-- Add Game Description --}}
