@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const { Characters } = require("../../models");
-const User = require("../models/Users");
+const User = require("../../models/Users");
 
-const withAuth = require("../utils/auth");
+const withAuth = require("../../utils/auth");
 
 // get ALL
 router.get("/", withAuth, async (req, res) => {
@@ -34,7 +34,6 @@ router.get("/:id", withAuth, async (req, res) => {
     const characterData = await Characters.findOne({
       where: {
           id: req.params.id,
-          include:
       }
     });
     res.status(200).json(characterData);
