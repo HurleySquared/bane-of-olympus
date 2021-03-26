@@ -61,6 +61,25 @@ router.post("/login", withAuth, async (req, res) => {
   }
 });
 
+router.get("/login:id", withAuth, async (req, res) => {
+  try {
+    const dbUserData = await User.findByPk({
+      where: { id: req.params.id },
+      include: [
+        {
+          model: User,
+          attributes: "username",
+        },
+      ],
+    });
+    const user = dbUserData.get({ plain: true });
+    res.render("user", { user, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 // Logout
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
