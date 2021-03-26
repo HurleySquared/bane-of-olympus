@@ -5,7 +5,7 @@ const characterdata = [
     character_name: 'Hunter',
     health: 100,
     damage: 0,
-    image: ''
+    image: '',
     game_id:1,
     
   },
