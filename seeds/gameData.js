@@ -1,14 +1,14 @@
-const { Game } = require('../models');
+const { Game } = require("../models");
 
 const gamedata = [
   {
     level: 1,
-    score: '',
-    character_id: '',
-    
+    score: "",
+    character_id: "",
+    user_id: 1,
   },
 ];
 
-const seedGame = () => Game.bulkCreate(characterdata);
+const seedGame = () => Game.bulkCreate(gamedata);
 
 module.exports = seedGame;
