@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,30 +10,54 @@
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/public/css/style.css">
 </head>
+
 <body>
-  <header>
-    <h1>Bane of Olympus</h1>
-  </header>
-    <nav>
-    <a href="/">Home</a>
-    <a href="/leaderboards">Leaderboards</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    <a href="/login">Sign-Up</a>
-    {{/if}}
-  </nav>
+  <div class="container is-fluid">
+    <div class="notification is-primary">
+      <header>
+        <h1>Bane of Olympus</h1>
+      </header>
+      <nav class="level is-mobile">
+        <div class="level-item has-text-centered">
+          <div>
+            <a href="/" class="title">Home</a>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <a href="/leaderboards" class="title">Leaderboards</a>
+          </div>
+        </div>
+        {{#if loggedIn}}
+        <div class="level-item has-text-centered">
+          <div>
+            <a href="/api/user/logout" class="title">Logout</a>
+          </div>
+        </div>
+        {{else}}
+        <div class="level-item has-text-centered">
+          <div>
+            <a href="/login" class="title">Login</a>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <a href="/login" class="title">Sign-Up</a>
+          </div>
+        </div>
+        {{/if}}
+      </nav>
+    </div>
+  </div>
   <main>
     {{{body}}}
   </main>
   {{#if loggedIn}}
   <script src="/public/js/logout.js"></script>
   {{/if}}
-  
-  <script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
