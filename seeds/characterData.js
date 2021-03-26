@@ -6,20 +6,23 @@ const characterdata = [
     health: 100,
     damage: 0,
     image: ''
+    game_id:1,
     
   },
   {
     character_name: 'Barbarian',
     health: 100,
     damage: 0,
-    image: ''
+    image: '',
+    game_id:2,
     
   },
   {
     character_name: 'Mage',
     health: 100,
     damage: 0,
-    image: ''
+    image: '',
+    game_id:3,
     
   },
 ];
