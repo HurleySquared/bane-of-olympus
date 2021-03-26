@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const { Game } = require("../../models");
-
 const withAuth = require("../../utils/auth");
 
 router.post('/:id', withAuth, async (req, res) => {
@@ -63,3 +62,18 @@ router.put('/', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.get("/", withAuth, async (req, res) => {
+  try {
+    //This is just a placeholder
+    res.render('homepage')
+    
+    
+    
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+module.exports = router;
