@@ -7,9 +7,9 @@
   <main class="container" id="battle-field">
     <section class="player" id="user">
       <div>
-      <h2>user-name</h2>
+      <h2>{{character.name}}</h2>
       <div class=" animate__animated">
-          <img class="player-pic" src="placeHolder.png">
+          <img class="player-pic" src="../public/images/placeHolder.png">
         </div>
       </div>
       <div id="attacks">
@@ -22,17 +22,18 @@
       </div>
     </section>
     <section class="is-align-items-end">
-      <div class="animate__animated animate__zoomIn" id="alert">User attacked, boss loss 25 hp</div>
+      <div class="animate__animated animate__zoomIn" id="alert">{{character.name}} attacked, {{enemy.name}} loss {{character.damage}} hp</div>
+      <div class="animate__animated animate__zoomIn" id="alert">{{enemy.name}} attacked, {{character.name}} loss {{enemy.damage}} hp</div>
     </section>
     <section class="player" id="boss">
       <div>
-      <h2>boss-name</h2>
+      <h2>{{enemy.name}}</h2>
       <div class=" animate__animated">
-          <img class="player-pic" src="placeHolder.png">
+          <img class="player-pic" src="../public/images/placeHolder.png">
         </div>
       </div>
       <div id="enemyHP">
-        HP available: 100
+        {{enemy.hp}}
       </div>
     </section>
   </main>
