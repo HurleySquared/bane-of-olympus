@@ -71,6 +71,18 @@ max-height: 240px;
   font-size: 24px;
 }
 
-.buttons {
-  position: absoloute;
+.hero-body .intro {
+  position: absolute;
+  top: 39.5%;
+  left: 45%;
+}
+
+.intro a {
+  font-size: 24px;
+  text-decoration: none;
+  color: var(--sandstone);
+  background-color: var(--dark);
+  border-radius: .25rem;
+  opacity: .7;
+  padding-right: 4px;
 }
