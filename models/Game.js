@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Game extends Model {}
+class Game extends Model { }
 
 Game.init(
   {
@@ -10,10 +10,6 @@ Game.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
-    },
-    character_id: {
-      type: DataTypes.STRING,
-      allowNull: true,
     },
     score: {
       type: DataTypes.INTEGER,

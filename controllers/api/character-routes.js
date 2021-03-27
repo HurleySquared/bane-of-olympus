@@ -36,6 +36,9 @@ router.post("/", withAuth, async (req, res) => {
       image: req.body.charImage,
       game_id: userGame.id,
     });
+    req.session.save(() => {
+      req.session.game_id = userGame.id;
+    });
     res.status(200).json(characterData);
   } catch (err) {
     res.status(400).json(err);
