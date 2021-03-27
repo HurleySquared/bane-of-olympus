@@ -27,12 +27,23 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-router.post("/:id", withAuth, async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
-    const characterData = await Characters.findOne({
-      where: {
-        id: req.params.id,
-      },
+    const userGame = await User.findOne({
+      where: { id: req.session.id },
+      include: [
+        {
+          model: Game,
+          attributes: ['id']
+        }
+      ]
+   })
+    const characterData = await Characters.create({
+      character_name: req.body.char,
+      health: 100,
+      damage: 10,
+      image: req.body.charImage,
+      game_id: userGame.game.id,
     });
     res.status(200).json(characterData);
   } catch (err) {
