@@ -1,7 +1,17 @@
+:root {
+  --dark: #2b2c18;
+  --sandstone: #D3BE9F;
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 800;
 }
 
 #battle-header {
@@ -36,6 +46,23 @@ max-height: 240px;
 .animate__animated.animate__zoomin {
   --animate-duration: 2s;
   --animate-delay: 1s;
+}
+
+/* Homepage Handlebars design */
+
+.hero-body {
+  position: relative;
+  text-align: center;
+}
+
+#game-description {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  color: var(--dark);
+  opacity: .8;
+  width: 80%;
+  font-size: 24px;
 }
 
 
