@@ -32,8 +32,16 @@ const signupFormHandler = async (event) => {
       body: JSON.stringify({ username, email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-
-    if (response.ok) {
+    const newGame = await fetch('api/game', {
+      method: 'POST',
+      body: JSON.stringify({
+        character_id: 0,
+        score: 0,
+        level: 0,
+      }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    if (response.ok && newGame.ok) {
       document.location.replace('/');
     } else {
       alert('Failed to sign up.');
