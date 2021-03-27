@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Game } = require("../../models");
 
 const withAuth = require("../../utils/auth");
 
@@ -67,6 +67,24 @@ router.post("/login", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/char', withAuth, async (req, res) => {
+  try {
+    const dbUserData = await User.findByPk({
+      where: { id: req.session.id },
+      include: [
+        {
+          model: Game,
+        },
+      ],
+    })
+    const userGame = JSON.parse(JSON.stringify(dbUserData));
+    return userGame;
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
 
 router.get("/login:id", withAuth, async (req, res) => {
   try {
