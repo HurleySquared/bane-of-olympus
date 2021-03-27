@@ -1,13 +1,16 @@
+<section class="hero is-fullheight-with-navbar">
+  <div class="hero-body">
+    <img src="/images/mspiske.jpg" alt="Marcus Spiske image of Walhalla">
+    <p class="title" id="game-description">Battle the Gods in this legendary RPG. Sign-Up, choose your character, and engage in an epic battle!
+    Use your character's strengths and a combination of attacks to further your score.  Are you ready for glory?!
+    </p>
 {{#if loggedIn}}
   <div class="buttons">
-    <a href="/characterselect">Start Your Journey</a>
-    {{!-- Add path to get to character selection href="/firstlevel" --}}
-  </div>
+    <a href="/characterselect" class="title">Start Your Journey</a>
 {{else}}
-    <a href="/login">Login</a>
-    <a href="/signup">Sign-Up</a>
+    <a href="/login"class="title">Login</a>
+    <a href="/signup" class="title">Sign-Up</a>
+  </div>
 {{/if}}
-  {{!-- Add Image --}}
-  <p id="game-description">Battle the Gods in this legendary RPG. Sign-Up, choose your character, and engage in an epic battle!
-    Use your character's strengths and a combination of attacks to further your score.  Are you ready for glory?!
-  </p>
+  </div>
+</section>
