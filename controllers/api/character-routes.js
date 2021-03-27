@@ -1,6 +1,5 @@
 const router = require("express").Router();
-const { Characters } = require("../../models");
-const User = require("../../models/Users");
+const { User, Characters, Game } = require("../../models");
 
 const withAuth = require("../../utils/auth");
 
@@ -29,21 +28,13 @@ router.get("/", withAuth, async (req, res) => {
 
 router.post("/", withAuth, async (req, res) => {
   try {
-    const userGame = await User.findOne({
-      where: { id: req.session.id },
-      include: [
-        {
-          model: Game,
-          attributes: ['id']
-        }
-      ]
-   })
+    const userGame = await Game.findOne({ where: { user_id: req.session.user_id } })
     const characterData = await Characters.create({
       character_name: req.body.char,
       health: 100,
       damage: 10,
       image: req.body.charImage,
-      game_id: userGame.game.id,
+      game_id: userGame.id,
     });
     res.status(200).json(characterData);
   } catch (err) {

@@ -70,11 +70,12 @@ router.post("/login", async (req, res) => {
 
 router.get('/char', withAuth, async (req, res) => {
   try {
-    const dbUserData = await User.findByPk({
-      where: { id: req.session.id },
+    const dbUserData = await User.findOne({
+      where: { id: req.session.user_id },
       include: [
         {
           model: Game,
+          attributes: ['id']
         },
       ],
     })
