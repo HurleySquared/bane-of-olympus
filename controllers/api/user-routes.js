@@ -1,10 +1,10 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Game } = require("../../models");
 
 const withAuth = require("../../utils/auth");
 
 // CREATE new user
-router.post("/", withAuth, async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const dbUserData = await User.create({
       username: req.body.username,
@@ -12,7 +12,13 @@ router.post("/", withAuth, async (req, res) => {
       password: req.body.password,
     });
 
+    const dbUserId = await User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    });
     req.session.save(() => {
+      req.session.user_id = dbUserId.id
       req.session.loggedIn = true;
 
       res.status(200).json(dbUserData);
@@ -24,7 +30,7 @@ router.post("/", withAuth, async (req, res) => {
 });
 
 // Login
-router.post("/login", withAuth, async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
@@ -49,6 +55,7 @@ router.post("/login", withAuth, async (req, res) => {
     }
 
     req.session.save(() => {
+      req.session.user_id = dbUserData.id
       req.session.loggedIn = true;
 
       res
@@ -60,6 +67,24 @@ router.post("/login", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/char', withAuth, async (req, res) => {
+  try {
+    const dbUserData = await User.findByPk({
+      where: { id: req.session.id },
+      include: [
+        {
+          model: Game,
+        },
+      ],
+    })
+    const userGame = JSON.parse(JSON.stringify(dbUserData));
+    return userGame;
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
 
 router.get("/login:id", withAuth, async (req, res) => {
   try {

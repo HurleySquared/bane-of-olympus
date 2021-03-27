@@ -13,7 +13,7 @@ Game.init(
     },
     character_id: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     score: {
       type: DataTypes.INTEGER,

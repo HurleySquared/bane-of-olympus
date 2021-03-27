@@ -16,3 +16,5 @@ Characters.belongsTo(Game, {
 Game.hasOne(Characters, {
   foreignKey: "game_id",
 });
+
+module.exports = { User, Game, Enemies, Characters};
