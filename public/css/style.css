@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#battle-header {
+  text-align: center;
+  font-size: 64px;
+  margin-bottom: 24px;
+}
+
+#battle-field {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.player {
+  max-width: 350px;
+}
+
+.player-pic {
+max-width: 240px;
+max-height: 240px;
+}
+
+#alert {
+  min-width: 240px;
+  min-height: 240px;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.animate__animated.animate__zoomin {
+  --animate-duration: 2s;
+  --animate-delay: 1s;
+}
+
+
