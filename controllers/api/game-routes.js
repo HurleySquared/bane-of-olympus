@@ -6,7 +6,6 @@ const withAuth = require("../../utils/auth");
 router.post('/', withAuth, async (req, res) => {
     try {
         const gameData = await Game.create({
-            character_id: req.body.character_id,
             score: req.body.score,
             level: req.body.level,
             user_id: req.session.user_id
@@ -49,9 +48,9 @@ router.delete('/:id', withAuth, async (req, res) => {
     }
 });
 
-router.put('/', withAuth, async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
-        const gameData = Game.update(req, body, {
+        const gameData = await Game.update(req.body, {
             where: {
                 id: req.params.id
             }

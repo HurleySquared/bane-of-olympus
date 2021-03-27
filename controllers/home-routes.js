@@ -37,10 +37,16 @@ router.get('/characterselect', withAuth, async (req, res) => {
   const getGame = await Game.findOne({
     where: {
       user_id: req.session.user_id
-    }
+    },
+    include: [
+      {
+        model: Characters,
+        attributes: ['id'],
+      }
+    ]
   });
   const userGame = await JSON.parse(JSON.stringify(getGame));
-  if (!userGame.character_id) {
+  if (userGame.character !== null) {
     res.render('character-select', {
       loggedIn,
       userGame
