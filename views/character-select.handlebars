@@ -1,11 +1,13 @@
-<h1>{{senduser.username}}</h1>
-<section class="container m-0 p-0">
+<h2>{{senduser.username}}, select your character for battle.</h2>
+<section class="container">
 <div class="card" id="character-card">
-  <div class="card-image">
-    <figure class="image is-4by3">
+  {{!-- <div class="card-image"> --}}
+      <a href="/battle" id="charSelectButton">
+    <figure class="image">
       <img src="{{sendGame.image}}" alt="">
     </figure>
-  </div>
+      </a>
+  {{!-- </div> --}}
   <div class="card-content">
     <div class="media">
       <div class="media-content">
@@ -22,8 +24,8 @@
     </div>
   </div>
 </div>
-<a href="/battle" id="charSelectButton">Commence Battle</a>
 </section>
+{{!-- <a href="/battle" id="charSelectButton">Commence Battle</a> --}}
 {{!-- {{#each character as |character|}}
 {{> character}}
 {{/each}} --}}
