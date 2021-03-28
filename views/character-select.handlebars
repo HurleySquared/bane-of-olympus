@@ -1,5 +1,6 @@
-<h1>{{sendUser.username}}</h1>
-<div class="card">
+<h1>{{senduser.username}}</h1>
+<section class="container m-0 p-0">
+<div class="card" id="character-card">
   <div class="card-image">
     <figure class="image is-4by3">
       <img src="{{sendGame.image}}" alt="">
@@ -9,20 +10,20 @@
     <div class="media">
       <div class="media-content">
         <p class="title is-4">{{sendGame.character_name}}</p>
-        <p class="subtitle is-6">Score: {{games.score}}</p>
       </div>
     </div>
     <div class="content">
       <ul>
+        <li>Score: {{games.score}}</li>
         <li>Damage: {{sendGame.damage}}</li>
-        {{!-- <li>Strong Attack: {{character.strong}}</li> --}}
-        {{!-- <li>Wisdom Attack: {{character.wisdom}}</li>  --}}
+        <li>Strong Attack: {{character.strong}}</li>
+        <li>Wisdom Attack: {{character.wisdom}}</li>
       </ul>
     </div>
   </div>
 </div>
 <a href="/battle" id="charSelectButton">Commence Battle</a>
-
+</section>
 {{!-- {{#each character as |character|}}
 {{> character}}
 {{/each}} --}}
