@@ -5,7 +5,7 @@
   <main class="container" id="battle-field">
     <section class="player" id="user">
       <div>
-      <h2>{{character.name}}</h2>
+      <h2>{{character.character_name}}</h2>
       <div class=" animate__animated" id="player1">
           <img class="player-pic" src="/images/{{character.image}}">
         </div>
@@ -16,13 +16,17 @@
         <button id="attack3">Attack3</button>
       </div>
       <div id="charHP">
-        {{character.hp}}
+        {{character.health}}
       </div>
     </section>
-    <section class="is-align-items-end">
-      <div class="animate__animated hidden" id="moveAlert">
-        <p>{{character.name}} attacked, {{enemy.name}} loss {{character.damage}} hp</p>
-        <p>{{enemy.name}} attacked, {{character.name}} loss {{enemy.damage}} hp</p>
+    <section>
+      <div class="animate__animated hide" id="user-alert">
+        <p>{{character.character_name}} attacked,</p>
+        <p>{{enemy.name}} loss {{character.damage}} hp</p>
+      </div>
+      <div class="animate__animated hide" id="enemy-alert">
+        <p>{{enemy.name}} attacked,</p>
+        <p>{{character.character_name}} loss {{enemy.damage}} hp</p>
       </div>
     </section>
     <section class="player" id="boss">

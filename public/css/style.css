@@ -139,6 +139,10 @@ max-height: 240px;
   visibility: hidden;
 }
 
+.hide {
+  display: none;
+}
+
 #moveAlert {
   font-size: 32px;
   font-weight: 800;
