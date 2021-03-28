@@ -1,5 +1,6 @@
 :root {
   --dark: #2b2c18;
+  --light: #d9c5ad;
   --sandstone: #dbcda7;
 }
 
@@ -9,14 +10,16 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Playfair Display SC', serif;
-  background-color: var(--sandstone);
   height: 100%;
 }
 
 h1 {
   text-align: center;
+  color: var(--light);
   font-size: 64px;
   font-weight: 800;
+  font-family: 'MedievalSharp', cursive;
+  margin-bottom: 8px;
 }
 
 h2 {
@@ -24,6 +27,12 @@ h2 {
   font-size: 34px;
   font-weight: 800;
 }
+
+div a {
+  text-decoration: none;
+  font-family: 'Eagle Lake', cursive;
+}
+
 .notification {
   background-color: var(--dark);
   color: var(--sandstone);
@@ -58,36 +67,49 @@ max-height: 240px;
 }
 
 /* Homepage Handlebars design */
+/* .hero {
+} */
 
 .hero-body {
   position: relative;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  background-image: url("/images/mspiske.jpg");
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #game-description {
   position: absolute;
-  top: 10%;
-  right: 10%;
-  color: var(--dark);
-  opacity: .8;
+  top: 47%;
+  color: var(--sandstone);
   width: 80%;
-  font-size: 24px;
+  font-size: 20px;
+  background-color: var(--dark);
+  opacity: .8;
+  border-radius: 4;
 }
 
 .hero-body .intro {
   position: absolute;
-  top: 39.5%;
-  left: 45%;
+  top: 28%;
+  width: 10%;
 }
 
 .intro a {
+  display: flex;
+  justify-content: center;
   font-size: 24px;
   text-decoration: none;
   color: var(--sandstone);
   background-color: var(--dark);
   border-radius: .25rem;
   opacity: .7;
-  padding-right: 4px;
 }
 
 .card {
