@@ -1,12 +1,14 @@
+const stats = document.getElementById('stats').value
+
 const attackOne = async (event) => {
   event.preventDefault();
-
-  var getChar = await fetch('/api/game/id');
-  console.log(getChar);
-  var character = await JSON.parse(JSON.stringify(getChar));
-  var characterHP = character.health;
-  var characterDam = character.damage;
-  var charImage = character.image;
+  const character = JSON.parse(stats);
+  // const getChar = await fetch('/api/game/id');
+  // console.log(getChar);
+  // var character = await JSON.parse(JSON.stringify(getChar));
+  var characterHP = character.characterHP;
+  var characterDam = character.characterDam;
+  var charImage = character.charImage;
   console.log(character);
   switch (charImage) {
     case '/images/mage.png':
@@ -14,18 +16,17 @@ const attackOne = async (event) => {
       var atkMult = 1;
       break;
     case '/images/beast.png':
-      var charClass = 'Barbarian'
+      var charClass = 'Barbarian';
       var atkMult = 1;
       break;
     case '/images/hunter.png':
-      var charClass = 'Hunter'
+      var charClass = 'Hunter';
       var atkMult = 1.2;
       break;
   };
-  const enemy = await fetch('api/enemies/random');
-  var enemyHP = enemy.health;
-  var enemyDam = enemy.damage;
-  console.log(enemy);
+  // const enemy = await fetch('api/enemies/random');
+  var enemyHP = character.enemyHP;
+  var enemyDam = character.enemyDam;
 
   if (Math.floor(Math.random()) < 0.9) {
     var charDam = (characterDam * atkMult);

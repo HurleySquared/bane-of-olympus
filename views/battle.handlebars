@@ -24,26 +24,27 @@
     <section>
       <div class="animate__animated hide alert" id="user-alert">
         <p>{{character.character_name}} attacked,</p>
-        <p>{{enemy.name}} loss {{character.damage}} hp</p>
+        <p>{{enemy.character_name}} lost {{character.damage}} hp</p>
       </div>
       <div class="animate__animated hide alert" id="enemy-alert">
-        <p>{{enemy.name}} attacked,</p>
-        <p>{{character.character_name}} loss {{enemy.damage}} hp</p>
+        <p>{{enemy.character_name}} attacked,</p>
+        <p>{{character.character_name}} lost {{enemy.damage}} hp</p>
       </div>
     </section>
     <section class="player" id="boss">
       <div>
-      <h2>{{enemy.name}}</h2>
+      <h2>{{enemy.character_name}}</h2>
       <div class=" animate__animated" id="enemy">
-          <img class="player-pic" src="/images/{{enemy.image}}">
+          <img class="player-pic" src="{{enemy.image}}">
         </div>
       </div>
       <div id="enemyHP">
         <p> Health:
-        <progress id="enemyHelath" value="{{enemy.hp}}" max="100"></progress>
+        <progress id="enemyHelath" value="{{enemy.health}}" max="100"></progress>
         </p>
       </div>
     </section>
+    <input type="hidden" id="stats" name="stats" value="{{battleSave}}">
   </main>
   <script src="/js/battleMechanics.js"></script>
   <script type="text/javascript" src="/js/battleAnimation.js"></script>

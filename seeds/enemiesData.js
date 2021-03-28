@@ -17,7 +17,7 @@ const enemiesdata = [
     character_name: "Zeus",
     health: 150,
     damage: 15,
-    image: "",
+    image: "/images/pexels-furkanfdemir-5018188.jpg",
   },
 ];
 
