@@ -14,8 +14,15 @@ router.get('/', async (req, res) => {
 
 router.get('/battle', async (req, res) => {
   try {
-    const loggedIn = req.session.loggedIn
-    res.render('battle', { loggedIn })
+    const getChar = await Characters.findOne({ where: { game_id: req.session.game_id } });
+    const loggedIn = req.session.loggedIn;
+    const enemy = {name: "Zeus", hp: 100, image: "pexels-furkanfdemir-5018188.jpg"};
+    const character = JSON.parse(JSON.stringify(getChar))
+    res.render('battle', {
+      loggedIn,
+      character,
+      enemy
+    })
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

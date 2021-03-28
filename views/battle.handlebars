@@ -5,9 +5,9 @@
   <main class="container" id="battle-field">
     <section class="player" id="user">
       <div>
-      <h2>{{character.name}}</h2>
+      <h2>{{character.character_name}}</h2>
       <div class=" animate__animated">
-          <img class="player-pic" src="/images/{{character.image}}">
+          <img class="player-pic" src="{{character.image}}">
         </div>
       </div>
       <div id="attacks">
@@ -16,7 +16,7 @@
         <button id="attack3">Attack3</button>
       </div>
       <div id="charHP">
-        {{character.hp}}
+        {{character.health}}
       </div>
     </section>
     <section class="player" id="boss">
