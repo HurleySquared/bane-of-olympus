@@ -10,21 +10,23 @@
           <img class="player-pic" src="{{character.image}}">
         </div>
       </div>
+      <div>
+        <p> Health:
+        <progress id="charHelath" value="{{character.health}}" max="100"></progress>
+        </p>
+      </div>
       <div id="attacks">
         <button id="attack1">Attack1</button>
         <button id="attack2">Attack2</button>
         <button id="attack3">Attack3</button>
       </div>
-      <div id="charHP">
-        {{character.health}}
-      </div>
     </section>
     <section>
-      <div class="animate__animated hide" id="user-alert">
+      <div class="animate__animated hide alert" id="user-alert">
         <p>{{character.character_name}} attacked,</p>
         <p>{{enemy.name}} loss {{character.damage}} hp</p>
       </div>
-      <div class="animate__animated hide" id="enemy-alert">
+      <div class="animate__animated hide alert" id="enemy-alert">
         <p>{{enemy.name}} attacked,</p>
         <p>{{character.character_name}} loss {{enemy.damage}} hp</p>
       </div>
@@ -37,7 +39,9 @@
         </div>
       </div>
       <div id="enemyHP">
-        {{enemy.hp}}
+        <p> Health:
+        <progress id="enemyHelath" value="{{enemy.hp}}" max="100"></progress>
+        </p>
       </div>
     </section>
   </main>
