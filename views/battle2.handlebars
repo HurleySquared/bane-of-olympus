@@ -1,44 +1,45 @@
-
-  <header id="battle-header">
-    <h1 id="choose-attack">Choose your attack...</h1>
-  </header>
-  <main class="container" id="battle-field">
-    <section class="player" id="user">
-      <div>
+<header id="battle-header">
+  <h1 id="choose-attack">Choose your attack...</h1>
+</header>
+<main class="container" id="battle-field">
+  <section class="player" id="user">
+    <div>
       <h2>{{character.character_name}}</h2>
       <div class=" animate__animated" id="player1">
-          <img class="player-pic" src="/images/{{character.image}}">
-        </div>
+        <img class="player-pic" src="/images/{{character.image}}">
       </div>
-      <div id="attacks">
-        <button id="attack1">Attack1</button>
-        <button id="attack2">Attack2</button>
-        <button id="attack3">Attack3</button>
-      </div>
-      <div id="charHP">
-        {{character.health}}
-      </div>
-    </section>
-    <section>
-      <div class="animate__animated hide" id="user-alert">
-        <p>{{character.character_name}} attacked,</p>
-        <p>{{enemy.name}} loss {{character.damage}} hp</p>
-      </div>
-      <div class="animate__animated hide" id="enemy-alert">
-        <p>{{enemy.name}} attacked,</p>
-        <p>{{character.character_name}} loss {{enemy.damage}} hp</p>
-      </div>
-    </section>
-    <section class="player" id="boss">
-      <div>
+    </div>
+    <div id="attacks">
+      <button id="attack1">Attack1</button>
+      <button id="attack2">Attack2</button>
+      <button id="attack3">Attack3</button>
+    </div>
+    <div id="charHP">
+      {{character.health}}
+    </div>
+  </section>
+  <section>
+    <div class="animate__animated hide" id="user-alert">
+      <p>{{character.character_name}} attacked,</p>
+      <p>{{enemy.name}} loss {{character.damage}} hp</p>
+    </div>
+    <div class="animate__animated hide" id="enemy-alert">
+      <p>{{enemy.name}} attacked,</p>
+      <p>{{character.character_name}} loss {{enemy.damage}} hp</p>
+    </div>
+  </section>
+  <section class="player" id="boss">
+    <div>
       <h2>{{enemy.name}}</h2>
       <div class=" animate__animated" id="enemy">
-          <img class="player-pic" src="/images/{{enemy.image}}">
-        </div>
+        <img class="player-pic" src="/images/{{enemy.image}}">
       </div>
-      <div id="enemyHP">
-        {{enemy.hp}}
-      </div>
-    </section>
-  </main>
-  <script type="text/javascript" src="battleAnimation.js"></script>
+    </div>
+    <div id="enemyHP">
+      {{enemy.hp}}
+    </div>
+  </section>
+  <input type="hidden" id="stats" name="stats" value="">
+
+</main>
+<script type="text/javascript" src="battleAnimation.js"></script>

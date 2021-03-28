@@ -3,13 +3,10 @@ const stats = document.getElementById('stats').value
 const attackOne = async (event) => {
   event.preventDefault();
   const character = JSON.parse(stats);
-  // const getChar = await fetch('/api/game/id');
-  // console.log(getChar);
-  // var character = await JSON.parse(JSON.stringify(getChar));
   var characterHP = character.characterHP;
   var characterDam = character.characterDam;
   var charImage = character.charImage;
-  console.log(character);
+
   switch (charImage) {
     case '/images/mage.png':
       var charClass = 'Mage';
@@ -28,6 +25,7 @@ const attackOne = async (event) => {
   var enemyHP = character.enemyHP;
   var enemyDam = character.enemyDam;
 
+  // character attack
   if (Math.floor(Math.random()) < 0.9) {
     var charDam = (characterDam * atkMult);
   } else {
@@ -35,12 +33,15 @@ const attackOne = async (event) => {
   };
   enemyHP -= charDam;
   
+  // enemy attack
   if (Math.floor(Math.random()) < 0.9) {
     var enemyDamDone = enemyDam;
   } else {
     var enemyDamDone = 0;
   };
   characterHP -= enemyDamDone;
+
+  // create new object for local storage
   const battleSave = {
     name: character.character_name,
     characterHP: characterHP,
@@ -54,6 +55,8 @@ const attackOne = async (event) => {
     enemyDamDone: enemyDamDone,
   };
   localStorage.setItem('currentBattle', JSON.stringify(battleSave));
+
+  
 };
 
 
