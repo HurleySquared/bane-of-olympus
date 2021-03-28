@@ -92,4 +92,14 @@ router.delete("/:id", withAuth, async (req, res) => {
   }
 });
 
+router.get("/fight", withAuth, async (req, res) => {
+  try {
+    const characterData = await Game.findOne({ where: { id: req.session.game_id } });
+    var userChar = await JSON.parse(JSON.stringify(characterData));
+    res.status(200).json(userChar);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 module.exports = router;

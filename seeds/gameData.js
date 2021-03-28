@@ -9,14 +9,14 @@ const gamedata = [
   },
   {
     level: 2,
-    score: "",
-    character_id: "",
+    score: 0,
+    character_id: 2,
     user_id: 2,
   },
   {
     level: 1,
-    score: "",
-    character_id: "",
+    score: 0,
+    character_id: 3,
     user_id: 3,
   },
 ];
