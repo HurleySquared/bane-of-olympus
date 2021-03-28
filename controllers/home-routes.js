@@ -51,15 +51,23 @@ router.get('/characterselect', withAuth, async (req, res) => {
       id: req.session.user_id
     },
     include: [
-      { model: Game, include: [{model: Characters}]},
+      { model: Game },
     ]
   })
   const sendUser = await JSON.parse(JSON.stringify(userData));
+  const gameData = await Characters.findOne({
+    where: {
+      game_id: req.session.game_id
+    },
+  });
+  const sendGame = await JSON.parse(JSON.stringify(gameData));
+  
   console.log(sendUser);
   if (userGame.character !== null) {
     res.render('character-select', {
       loggedIn,
-      sendUser
+      sendUser,
+      sendGame
     })
   } else {
     res.render('character-create', {
