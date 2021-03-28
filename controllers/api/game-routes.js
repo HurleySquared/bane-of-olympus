@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Game } = require("../../models");
+const { Game, Characters } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 // changed to just / and we'll get the id from the req.body
@@ -25,13 +25,20 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 //altered to get it by user_id Maybe not needed
-router.get('/:id', withAuth, async (req, res) => {
+router.get('/id', withAuth, async (req, res) => {
     try {
         const gameData = await Game.findOne({
             where: {
-                user_id: req.params.id
-            }
+                id: req.session.game_id
+            },
+            include: [
+                {
+                    model: Characters,
+                }
+            ]
         })
+        const findGame = await JSON.parse(JSON.stringify(gameData))
+        console.log(findGame);
         res.status(200).json(gameData);
     } catch (err) {
         res.status(400).json(err);
