@@ -9,8 +9,7 @@ const battleMove = () => {
   headerVisible();
   playerMove();
   setTimeout(function() {enemyMove()}, 3500);
-  document.getElementById('attack1').disabled = true;
-  setTimeout(function() {resetButton}, 7000);
+  resetButton();
 }
 
 const headerVisible = () => {
@@ -53,7 +52,8 @@ const resetEnemyAlert = () => {
 }
 
 const resetButton = () => {
-  document.getElementById('attack1').disabled = false;
+  document.getElementById('attack1').disabled = true;
+  setTimeout(function() {document.getElementById('attack1').disabled = false}, 7000);
 }
 
 document.getElementById('attack1').addEventListener('click', battleMove)
