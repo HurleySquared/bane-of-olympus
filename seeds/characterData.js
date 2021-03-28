@@ -4,24 +4,24 @@ const characterdata = [
   {
     character_name: 'Hunter',
     health: 100,
-    damage: 0,
-    image: '',
+    damage: 10,
+    image: '/images/hunter.png',
     game_id:1,
     
   },
   {
     character_name: 'Barbarian',
     health: 100,
-    damage: 0,
-    image: '',
+    damage: 10,
+    image: '/images/beast.png',
     game_id:2,
     
   },
   {
     character_name: 'Mage',
     health: 100,
-    damage: 0,
-    image: '',
+    damage: 10,
+    image: '/images/mage.png',
     game_id:3,
     
   },

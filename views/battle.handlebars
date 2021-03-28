@@ -1,12 +1,12 @@
 
   <header id="battle-header">
-    <h1>Choose your attack...</h1>
+    <h1 id="choose-attack">Choose your attack...</h1>
   </header>
   <main class="container" id="battle-field">
     <section class="player" id="user">
       <div>
       <h2>{{character.character_name}}</h2>
-      <div class=" animate__animated">
+      <div class=" animate__animated" id="player1">
           <img class="player-pic" src="{{character.image}}">
         </div>
       </div>
@@ -19,10 +19,20 @@
         {{character.health}}
       </div>
     </section>
+    <section>
+      <div class="animate__animated hide" id="user-alert">
+        <p>{{character.character_name}} attacked,</p>
+        <p>{{enemy.name}} loss {{character.damage}} hp</p>
+      </div>
+      <div class="animate__animated hide" id="enemy-alert">
+        <p>{{enemy.name}} attacked,</p>
+        <p>{{character.character_name}} loss {{enemy.damage}} hp</p>
+      </div>
+    </section>
     <section class="player" id="boss">
       <div>
       <h2>{{enemy.name}}</h2>
-      <div class=" animate__animated">
+      <div class=" animate__animated" id="enemy">
           <img class="player-pic" src="/images/{{enemy.image}}">
         </div>
       </div>
@@ -31,3 +41,5 @@
       </div>
     </section>
   </main>
+  <script src="/js/battleMechanics.js"></script>
+  <script type="text/javascript" src="/js/battleAnimation.js"></script>

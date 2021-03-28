@@ -1,7 +1,7 @@
 const playerAvatar = document.getElementById('player1');
 const enemyAvatar = document.getElementById('enemy');
 const chooseAttack = document.getElementById('choose-attack');
-const moveAlert = document.getElementById('move-alert');
+// const moveAlert = document.getElementById('move-alert');
 const userAlert = document.getElementById('user-alert');
 const enemyAlert = document.getElementById('enemy-alert');
 
