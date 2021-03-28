@@ -1,12 +1,12 @@
 
   <header id="battle-header">
-    <h1>Choose your attack...</h1>
+    <h1 id="choose-attack">Choose your attack...</h1>
   </header>
   <main class="container" id="battle-field">
     <section class="player" id="user">
       <div>
       <h2>{{character.name}}</h2>
-      <div class=" animate__animated">
+      <div class=" animate__animated" id="player1">
           <img class="player-pic" src="/images/{{character.image}}">
         </div>
       </div>
@@ -20,13 +20,15 @@
       </div>
     </section>
     <section class="is-align-items-end">
-      <div class="animate__animated animate__zoomIn" id="alert">{{character.name}} attacked, {{enemy.name}} loss {{character.damage}} hp</div>
-      <div class="animate__animated animate__zoomIn" id="alert">{{enemy.name}} attacked, {{character.name}} loss {{enemy.damage}} hp</div>
+      <div class="animate__animated hidden" id="moveAlert">
+        <p>{{character.name}} attacked, {{enemy.name}} loss {{character.damage}} hp</p>
+        <p>{{enemy.name}} attacked, {{character.name}} loss {{enemy.damage}} hp</p>
+      </div>
     </section>
     <section class="player" id="boss">
       <div>
       <h2>{{enemy.name}}</h2>
-      <div class=" animate__animated">
+      <div class=" animate__animated" id="enemy">
           <img class="player-pic" src="/images/{{enemy.image}}">
         </div>
       </div>
@@ -35,3 +37,4 @@
       </div>
     </section>
   </main>
+  <script type="text/javascript" src="battleAnimation.js"></script>
