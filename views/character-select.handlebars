@@ -2,19 +2,19 @@
 <div class="card">
   <div class="card-image">
     <figure class="image is-4by3">
-      <img src="{{sendUser.character.image}}" alt="{{character.description}}">
+      <img src="{{sendGame.image}}" alt="">
     </figure>
   </div>
   <div class="card-content">
     <div class="media">
       <div class="media-content">
-        <p class="title is-4">{{sendUser.character.character_name}}</p>
+        <p class="title is-4">{{sendGame.character_name}}</p>
         <p class="subtitle is-6">Score: {{games.score}}</p>
       </div>
     </div>
     <div class="content">
       <ul>
-        <li>Damage: {{sendUser.character.damage}}</li>
+        <li>Damage: {{sendGame.damage}}</li>
         {{!-- <li>Strong Attack: {{character.strong}}</li> --}}
         {{!-- <li>Wisdom Attack: {{character.wisdom}}</li>  --}}
       </ul>
