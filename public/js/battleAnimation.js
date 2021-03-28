@@ -1,6 +1,6 @@
 const playerAvatar = document.getElementById('player1');
 const enemyAvatar = document.getElementById('enemy');
-const chooseAttack = document.getElementById('chooseAttack');
+const chooseAttack = document.getElementById('choose-attack');
 const moveAlert = document.getElementById('moveAlert');
 
 const playerMove = () => {
@@ -12,6 +12,8 @@ const playerMove = () => {
   moveAlert.classList.toggle('animate__zoomIn');
   moveAlert.classList.toggle('hidden');
   setTimeout(function() {resetAlert()}, 4000);
+  document.getElementById('attack1').disabled = true;
+  setTimeout(function() {resetButton()}, 4000);
 }
 
 const resetMove = () => {
@@ -27,4 +29,9 @@ const resetAlert = () => {
 const visible = () => {
   chooseAttack.classList.toggle('hidden');
 }
+
+const resetButton = () => {
+  document.getElementById('attack1').disabled = false;
+}
+
 document.getElementById('attack1').addEventListener('click', playerMove)
