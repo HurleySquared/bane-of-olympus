@@ -1,29 +1,29 @@
-<h2>{{senduser.username}}, select your character for battle.</h2>
+<h2>{{sendUser.username}}, select your character for battle.</h2>
 <section class="container">
-<div class="card" id="character-card">
-  {{!-- <div class="card-image"> --}}
-      <a href="/battle" id="charSelectButton">
-    <figure class="image">
-      <img src="{{sendGame.image}}" alt="">
-    </figure>
-      </a>
-  {{!-- </div> --}}
-  <div class="card-content">
-    <div class="media">
-      <div class="media-content">
-        <p class="title is-4">{{sendGame.character_name}}</p>
+  <div class="card" id="character-card">
+    {{!-- <div class="card-image"> --}}
+      <figure id="card1" class="image">
+        <img src="/images/mage.png" alt="">
+      </figure>
+      {{!--
+    </div> --}}
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <p class="title is-4">{{sendGame.character_name}}</p>
+        </div>
+      </div>
+      <div class="content">
+        <ul>
+          <li>Score: {{games.score}}</li>
+          <li>Damage: {{sendGame.damage}}</li>
+          <li>Strong Attack: {{character.strong}}</li>
+          <li>Wisdom Attack: {{character.wisdom}}</li>
+        </ul>
       </div>
     </div>
-    <div class="content">
-      <ul>
-        <li>Score: {{games.score}}</li>
-        <li>Damage: {{sendGame.damage}}</li>
-        <li>Strong Attack: {{character.strong}}</li>
-        <li>Wisdom Attack: {{character.wisdom}}</li>
-      </ul>
-    </div>
   </div>
-</div>
+  <script src="/js/charSelect.js"></script>
 </section>
 {{!-- <a href="/battle" id="charSelectButton">Commence Battle</a> --}}
 {{!-- {{#each character as |character|}}

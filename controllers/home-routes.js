@@ -16,13 +16,33 @@ router.get('/battle', async (req, res) => {
   try {
     const getChar = await Characters.findOne({ where: { game_id: req.session.game_id } });
     const loggedIn = req.session.loggedIn;
-    const enemy = {name: "Zeus", hp: 100, image: "pexels-furkanfdemir-5018188.jpg"};
-    const character = JSON.parse(JSON.stringify(getChar))
+    //const enemy = { name: "Zeus", hp: 100, image: "pexels-furkanfdemir-5018188.jpg" };
+    const ranEnemy = await Enemies.findOne({ where: { id: Math.floor(Math.random() * 3 + 1) } });
+    const character = JSON.parse(JSON.stringify(getChar));
+
+    console.log(Math.floor(Math.random() * 3 + 1));
+    console.log(ranEnemy);
+    const enemy = JSON.parse(JSON.stringify(ranEnemy));
+    console.log(enemy);
+    const battleSave = JSON.stringify({
+      name: character.character_name,
+      characterHP: character.health,
+      characterDam: character.damage,
+      charImage: character.image,
+      enemyName: enemy.character_name,
+      enemyImage: enemy.image,
+      enemyHP: enemy.health,
+      enemyDam: enemy.damage,
+    });
+
     res.render('battle', {
       loggedIn,
       character,
-      enemy
+      enemy,
+      battleSave
     })
+
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -36,6 +56,10 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/battle', async (req, res) => {
+  try { } catch (err) { }
 });
 
 // must be logged in withAuth, will show character select handlebars
