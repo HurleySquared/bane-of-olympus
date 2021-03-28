@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-const bcrypt = require('bcrypt');
-
+const bcrypt = require("bcrypt");
+const { beforeBulkCreate } = require("./Characters");
 
 class User extends Model {
   checkPassword(loginPw) {
@@ -42,6 +42,10 @@ User.init(
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
+      },
+      beforeBulkCreate: async (bulkData) => {
+        bulkData.password = await bcrypt.hash(bulkData.password, 10);
+        return bulkData;
       },
     },
     sequelize,
