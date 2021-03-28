@@ -1,23 +1,23 @@
-<h1>{{user.username}}</h1>
+<h1>{{senduser.username}}</h1>
 <section class="container m-0 p-0">
 <div class="card" id="character-card">
   <div class="card-image">
     <figure class="image is-4by3">
-      <img src="{{character.image}}" alt="{{character.description}}">
+      <img src="{{sendGame.image}}" alt="">
     </figure>
   </div>
   <div class="card-content">
     <div class="media">
       <div class="media-content">
-        <p class="title is-4">{{character.character_name}}</p>
+        <p class="title is-4">{{sendGame.character_name}}</p>
       </div>
     </div>
     <div class="content">
       <ul>
-        <li>Score: {{game.score}}</li>
-        <li>Damage: {{character.damage}}</li>
-        {{!-- <li>Strong Attack: {{character.strong}}</li> --}}
-        {{!-- <li>Wisdom Attack: {{character.wisdom}}</li>  --}}
+        <li>Score: {{games.score}}</li>
+        <li>Damage: {{sendGame.damage}}</li>
+        <li>Strong Attack: {{character.strong}}</li>
+        <li>Wisdom Attack: {{character.wisdom}}</li>
       </ul>
     </div>
   </div>
