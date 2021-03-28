@@ -1,20 +1,20 @@
-<h1>{{user.username}}</h1>
+<h1>{{sendUser.username}}</h1>
 <div class="card">
   <div class="card-image">
     <figure class="image is-4by3">
-      <img src="{{character.image}}" alt="{{character.description}}">
+      <img src="{{sendGame.image}}" alt="">
     </figure>
   </div>
   <div class="card-content">
     <div class="media">
       <div class="media-content">
-        <p class="title is-4">{{character.character_name}}</p>
-        <p class="subtitle is-6">Score: {{game.score}}</p>
+        <p class="title is-4">{{sendGame.character_name}}</p>
+        <p class="subtitle is-6">Score: {{games.score}}</p>
       </div>
     </div>
     <div class="content">
       <ul>
-        <li>Damage: {{character.damage}}</li>
+        <li>Damage: {{sendGame.damage}}</li>
         {{!-- <li>Strong Attack: {{character.strong}}</li> --}}
         {{!-- <li>Wisdom Attack: {{character.wisdom}}</li>  --}}
       </ul>
