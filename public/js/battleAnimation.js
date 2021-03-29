@@ -14,7 +14,7 @@ const battleMove = () => {
 
 const headerVisible = () => {
   chooseAttack.classList.toggle('hidden');
-  setTimeout(function() {chooseAttack.classList.toggle('hidden')}, 3500);
+  setTimeout(function() {chooseAttack.classList.toggle('hidden')}, 4000);
 }
 
 const playerMove = () => {
@@ -53,7 +53,7 @@ const resetEnemyAlert = () => {
 
 const resetButton = () => {
   document.getElementsByTagName('button').disabled = true;
-  setTimeout(function() {document.getElementByTagName('button').disabled = false}, 4000);
+  setTimeout(function() {document.getElementByTagName('button').disabled = false}, 2000);
 }
 
 
