@@ -52,13 +52,8 @@ const resetEnemyAlert = () => {
 }
 
 const resetButton = () => {
-<<<<<<< HEAD
-  document.getElementsByTagName('button').disabled = true;
-  setTimeout(function() {document.getElementByTagName('button').disabled = false}, 2000);
-=======
   document.querySelectorAll('button').disabled = true;
   setTimeout(function() {document.querySelectorAll('button').disabled = false}, 4000);
->>>>>>> main
 }
 
 
