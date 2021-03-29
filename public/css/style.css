@@ -270,3 +270,33 @@ a {
 a {
   text-decoration: none !important;
 }
+<<<<<<< HEAD
+=======
+
+#defeat-message {
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+}
+
+#defeat-button {
+  display: flex;
+  justify-content: center;
+}
+
+.gameScore {
+  color: #911d1d;
+  font-weight: 1000;
+  text-shadow: 2px 1px var(--sandstone)
+}
+
+#exitGameButton {
+  border: solid;
+  border-radius: 4px;
+  border-color: var(--dark);
+  background-color: var(--dark);
+  color: var(--sandstone);
+  padding: 4px;
+  font-size: 24px;
+}
+>>>>>>> main

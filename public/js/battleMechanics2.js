@@ -66,15 +66,15 @@ const attackOne = async (event) => {
   await event.preventDefault();
 
   switch (charImage) {
-    case '/images/mage.png':
+    case '/images/mage.jpg':
       var charClass = 'Mage';
       var atkMult = 1;
       break;
-    case '/images/beast.png':
+    case '/images/beast.jpeg':
       var charClass = 'Barbarian';
       var atkMult = 1;
       break;
-    case '/images/hunter.png':
+    case '/images/hunter.jpg':
       var charClass = 'Hunter';
       var atkMult = 1.2;
       break;
@@ -103,15 +103,15 @@ const attackTwo = async (event) => {
   await event.preventDefault();
 
   switch (charImage) {
-    case '/images/mage.png':
+    case '/images/mage.jpg':
       var charClass = 'Mage';
       var atkMult = 1;
       break;
-    case '/images/beast.png':
+    case '/images/beast.jpeg':
       var charClass = 'Barbarian';
       var atkMult = 1.2;
       break;
-    case '/images/hunter.png':
+    case '/images/hunter.jpg':
       var charClass = 'Hunter';
       var atkMult = 1;
       break;
@@ -144,15 +144,15 @@ const attackThree = async (event) => {
   await event.preventDefault();
 
   switch (charImage) {
-    case '/images/mage.png':
+    case '/images/mage.jpg':
       var charClass = 'Mage';
       var atkMult = 1.2;
       break;
-    case '/images/beast.png':
+    case '/images/beast.jpeg':
       var charClass = 'Barbarian';
       var atkMult = 1;
       break;
-    case '/images/hunter.png':
+    case '/images/hunter.jpg':
       var charClass = 'Hunter';
       var atkMult = 1;
       break;
@@ -237,7 +237,7 @@ const init = () => {
       </p>
     </div>
   `;
-  setTimeout(function () { resolveAttacks() }, 7000);
+  setTimeout(function () { resolveAttacks() }, 4000);
 };
 
 init();

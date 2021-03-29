@@ -52,8 +52,9 @@ const resetEnemyAlert = () => {
 }
 
 const resetButton = () => {
-  document.querySelectorAll('button').disabled = true;
-  setTimeout(function() {document.querySelectorAll('button').disabled = false}, 4000);
+  const attackButton = document.querySelectorAll('button');
+  attackButton.forEach(button => button.disabled = true);
+  setTimeout(function() {attackButton.forEach(button => button.disabled = false)}, 4000);
 }
 
 
