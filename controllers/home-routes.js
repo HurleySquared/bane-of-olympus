@@ -119,7 +119,7 @@ router.get('/characterselect', withAuth, async (req, res) => {
   }
 })
 
-router.get('/leaderboard', async (req, res) => {
+router.get('/leaderboards', async (req, res) => {
   try {
     const leaderboardData = await User.findAll({
       include: [
