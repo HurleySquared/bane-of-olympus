@@ -32,12 +32,7 @@ h2 {
 }
 
 div a {
-<<<<<<< HEAD
-  text-decoration: none;
   font-family: "Eagle Lake", cursive;
-=======
-  font-family: 'Eagle Lake', cursive;
->>>>>>> main
 }
 
 div a:hover {
@@ -82,7 +77,7 @@ div a:hover {
   align-items: center;
   justify-content: center;
   background-color: #f3f3f3;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 #game-description {
@@ -108,20 +103,6 @@ div a:hover {
   background-size: cover;
 }
 
-<<<<<<< HEAD
-#game-description {
-  position: absolute;
-  top: 47%;
-  color: var(--sandstone);
-  width: 80%;
-  font-size: 20px;
-  background-color: var(--dark);
-  opacity: 0.8;
-  border-radius: 4;
-}
-
-=======
->>>>>>> main
 .hero-body .intro {
   position: absolute;
   top: 220px;
@@ -136,20 +117,15 @@ div a:hover {
   text-decoration: none;
   color: var(--red);
   background-color: var(--dark);
-<<<<<<< HEAD
   border-radius: 0.25rem;
-  opacity: 0.7;
-=======
-  border-radius: .25rem;
   border: var(--sandstone) 2px solid;
-  opacity: .9;
-  font-family: 'Caesar Dressing', cursive;
+  opacity: 0.9;
+  font-family: "Caesar Dressing", cursive;
 }
 
 .intro a:hover {
   transform: rotateY(360deg);
   transition: ease-in-out 1.5s;
->>>>>>> main
 }
 
 .card {
@@ -225,7 +201,7 @@ div a:hover {
 }
 
 .log-btn:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .box {
@@ -240,7 +216,6 @@ div a:hover {
   font-size: 20px;
   padding: 8px;
   box-shadow: 8px 8px var(--sandstone);
-}
 }
 
 /* leaderboard style */
@@ -257,4 +232,3 @@ div a:hover {
   text-align: center;
   border-radius: 10px;
 }
-  
