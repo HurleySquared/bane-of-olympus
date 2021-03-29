@@ -1,11 +1,34 @@
-const stats = document.getElementById('stats').value
+const stats = document.getElementById('stats').value;
+const character = JSON.parse(stats);
+let characterHP = character.characterHP;
+const characterDam = character.characterDam;
+const charImage = character.charImage;
+let enemyHP = character.enemyHP;
+const enemyDam = character.enemyDam;
+
+const saveFight = (characterHP, charDam, enemyHP, enemyDamDone) => {
+  // create new object for local storage
+  const battleSave = {
+    name: character.name,
+    characterMaxHP: character.characterMaxHP,
+    characterDam: character.characterDam,
+    charImage: character.charImage,
+    characterHP: characterHP,
+    charDamDone: charDam,
+    enemyHP: enemyHP,
+    enemyDamDone: enemyDamDone,
+    enemyName: character.enemyName,
+    enemyImage: character.enemyImage,
+    enemyDam: character.enemyDam,
+    enemyMaxHP: character.enemyMaxHP,
+  };
+  localStorage.setItem('currentBattle', JSON.stringify(battleSave));
+
+  document.location.replace('/battle2');
+}
 
 const attackOne = async (event) => {
   event.preventDefault();
-  const character = JSON.parse(stats);
-  var characterHP = character.characterHP;
-  var characterDam = character.characterDam;
-  var charImage = character.charImage;
 
   switch (charImage) {
     case '/images/mage.png':
@@ -21,60 +44,104 @@ const attackOne = async (event) => {
       var atkMult = 1.2;
       break;
   };
-  // const enemy = await fetch('api/enemies/random');
-  var enemyHP = character.enemyHP;
-  var enemyDam = character.enemyDam;
 
   // character attack
-  if (Math.floor(Math.random()) < 0.9) {
+  if (Math.random() < 0.9) {
     var charDam = (characterDam * atkMult);
   } else {
     var charDam = 0;
   };
   enemyHP -= charDam;
-  
+
   // enemy attack
-  if (Math.floor(Math.random()) < 0.9) {
+  if (Math.random() < 0.5) {
     var enemyDamDone = enemyDam;
   } else {
     var enemyDamDone = 0;
   };
   characterHP -= enemyDamDone;
 
-  // create new object for local storage
-  const battleSave = {
-    name: character.name, 
-    characterHP: characterHP,  
-    characterDam: characterDam, 
-    charImage: charImage, 
-    charDamDone: charDam, 
-    enemyName: character.enemyName,
-    enemyImage: character.enemyImage,
-    enemyHP: enemyHP, 
-    enemyDam: enemyDam, 
-    enemyDamDone: enemyDamDone, 
-  };
-  localStorage.setItem('currentBattle', JSON.stringify(battleSave));
-
-  
+  saveFight(characterHP, charDam, enemyHP, enemyDamDone);
 };
 
+const attackTwo = async (event) => {
+  await event.preventDefault();
 
+  switch (charImage) {
+    case '/images/mage.png':
+      var charClass = 'Mage';
+      var atkMult = 1;
+      break;
+    case '/images/beast.png':
+      var charClass = 'Barbarian';
+      var atkMult = 1.2;
+      break;
+    case '/images/hunter.png':
+      var charClass = 'Hunter';
+      var atkMult = 1;
+      break;
+  };
 
+  // character attack
+  if (charClass !== 'Mage') {
+    if (Math.random() < 0.5) {
+      var charDam = (characterDam * atkMult);
+    } else {
+      var charDam = 0;
+    };
+    enemyHP -= charDam;
+  } else {
+    characterHP += 25
+  };
 
+  // enemy attack
+  if (Math.random() < 0.5) {
+    var enemyDamDone = enemyDam;
+  } else {
+    var enemyDamDone = 0;
+  };
+  characterHP -= enemyDamDone;
 
+  saveFight(characterHP, charDam, enemyHP, enemyDamDone);
+};
 
+const attackThree = async (event) => {
+  await event.preventDefault();
 
+  switch (charImage) {
+    case '/images/mage.png':
+      var charClass = 'Mage';
+      var atkMult = 1.2;
+      break;
+    case '/images/beast.png':
+      var charClass = 'Barbarian';
+      var atkMult = 1;
+      break;
+    case '/images/hunter.png':
+      var charClass = 'Hunter';
+      var atkMult = 1;
+      break;
+  };
 
+  // character attack
+  if (Math.random() < 0.9) {
+    var charDam = (characterDam * atkMult);
+  } else {
+    var charDam = 0;
+  };
+  enemyHP -= charDam;
 
+  // enemy attack
+  if (Math.random() < 0.5) {
+    var enemyDamDone = enemyDam;
+  } else {
+    var enemyDamDone = 0;
+  };
+  characterHP -= enemyDamDone;
 
-
-
-
-
-
-
+  saveFight(characterHP, charDam, enemyHP, enemyDamDone);
+};
 
 document.getElementById('attack1').addEventListener('click', attackOne);
-// document.getElementById('attack2').addEventListener('click', attackTwo);
-// document.getElementById('attack2').addEventListener('click', attackThree);
+document.getElementById('attack2').addEventListener('click', attackTwo);
+document.getElementById('attack3').addEventListener('click', attackThree);

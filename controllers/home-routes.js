@@ -27,11 +27,13 @@ router.get('/battle', async (req, res) => {
     const battleSave = JSON.stringify({
       name: character.character_name,
       characterHP: character.health,
+      characterMaxHP: character.health,
       characterDam: character.damage,
       charImage: character.image,
       enemyName: enemy.character_name,
       enemyImage: enemy.image,
       enemyHP: enemy.health,
+      enemyMaxHP: enemy.health,
       enemyDam: enemy.damage,
     });
     console.log(JSON.parse(battleSave));
