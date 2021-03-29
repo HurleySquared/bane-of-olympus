@@ -27,13 +27,16 @@ router.get('/battle', async (req, res) => {
     const battleSave = JSON.stringify({
       name: character.character_name,
       characterHP: character.health,
+      characterMaxHP: character.health,
       characterDam: character.damage,
       charImage: character.image,
       enemyName: enemy.character_name,
       enemyImage: enemy.image,
       enemyHP: enemy.health,
+      enemyMaxHP: enemy.health,
       enemyDam: enemy.damage,
     });
+    console.log(JSON.parse(battleSave));
 
     res.render('battle', {
       loggedIn,
@@ -49,6 +52,18 @@ router.get('/battle', async (req, res) => {
   }
 });
 
+router.get('/battle2', async (req, res) => {
+  try {
+    const loggedIn = req.session.loggedIn;
+    res.render('battle2', {
+      loggedIn,
+    })
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -58,9 +73,6 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/battle', async (req, res) => {
-  try { } catch (err) { }
-});
 
 // must be logged in withAuth, will show character select handlebars
 router.get('/characterselect', withAuth, async (req, res) => {
@@ -106,7 +118,36 @@ router.get('/characterselect', withAuth, async (req, res) => {
       userGame
     })
   }
+})
 
+router.get('/leaderboard', async (req, res) => {
+  try {
+    const leaderboardData = await User.findAll({
+        include: [
+            {
+                model: Game,
+            },
+        ],
+    });
+    const leaderboard = await JSON.parse(JSON.stringify(leaderboardData));
+    const leaderArray = [];
+    for (const eachUser of leaderboard) {
+        const usersGame = await Game.findOne({
+            where: { user_id: eachUser.id }
+        })
+        leaderArray.push([eachUser.username, usersGame.score]);
+    };
+    await leaderArray.sort((a, b) => {
+        return b[1] - a[1];
+    });
+    console.log(leaderArray);
+    res.render("leaderboard", {
+        leaderArray,
+    });
+} catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+}
 })
 
 module.exports = router;

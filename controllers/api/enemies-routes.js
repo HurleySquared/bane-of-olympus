@@ -12,11 +12,6 @@ router.get('/random', withAuth, async (req, res) => {
     }
 });
 
-// router.post('/', withAuth, async (req, res) => {
-//     try {
-
-//     }
-// })
 
 
 module.exports = router;
