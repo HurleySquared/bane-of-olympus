@@ -168,9 +168,11 @@ router.get('/victory', async (req, res) => {
     const user = await JSON.parse(JSON.stringify(userData));
     const game = await JSON.parse(JSON.stringify(gameData));
     res.render("victory",
-      character,
-      user,
-      game
+      {
+        character,
+        user,
+        game
+      }
     )
   } catch (err) {
     console.log(err);
