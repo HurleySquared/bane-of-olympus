@@ -250,3 +250,17 @@ div a:hover {
 .char-btn:hover {
   opacity: .8;
 }
+
+.column {
+  display: flex;
+  justify-content: center;
+}
+.leader {
+  width: 1000px;
+  height: 700px;
+  background-color: var(--sandstone);
+  border-radius: 10px;
+  color: aliceblue;
+  text-align: center;
+  border-radius: 10px;
+}
