@@ -184,7 +184,7 @@ const init = () => {
   document.getElementById('charCard').innerHTML = `
   <h2>${character.name}</h2>
   <div class=" animate__animated" id="player1">
-    <img class="player-pic" src="${character.charImage}">
+    <img class="player-pic" id="player-image" src="${character.charImage}">
   </div>
   `;
   document.getElementById('playerHealth').innerHTML = `
