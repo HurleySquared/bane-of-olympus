@@ -100,7 +100,7 @@ max-height: 240px;
 
 .hero-body .intro {
   position: absolute;
-  top: 28%;
+  top: 220px;
   width: 20%;
 }
 
@@ -108,10 +108,12 @@ max-height: 240px;
   display: flex;
   justify-content: center;
   font-size: 24px;
+  height: 40px;
   text-decoration: none;
   color: var(--red);
   background-color: var(--dark);
   border-radius: .25rem;
+  border: var(--sandstone) 2px solid;
   opacity: .9;
   font-family: 'Caesar Dressing', cursive;
 }
