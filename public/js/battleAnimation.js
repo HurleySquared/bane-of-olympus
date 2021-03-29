@@ -52,8 +52,8 @@ const resetEnemyAlert = () => {
 }
 
 const resetButton = () => {
-  document.getElementById('attack1').disabled = true;
-  setTimeout(function() {document.getElementById('attack1').disabled = false}, 3500);
+  document.getElementsByTagName('button').disabled = true;
+  setTimeout(function() {document.getElementByTagName('button').disabled = false}, 4000);
 }
 
 battleMove();
