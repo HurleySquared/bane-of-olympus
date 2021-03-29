@@ -1,5 +1,6 @@
 const withAuth = require('../utils/auth');
 const { User, Game, Enemies, Characters } = require('../models');
+const { findOne } = require('../models/Characters');
 const router = require('express').Router();
 
 router.get('/', async (req, res) => {
@@ -160,7 +161,17 @@ router.get('/defeat', async (req, res) => {
 
 router.get('/victory', async (req, res) => {
   try {
-    res.render("victory")
+    const characterData = await Characters.findOne({ where: { game_id: req.session.game_id } });
+    const userData = await User.findOne({ where: { id: req.session.id } });
+    const gameData = await Game.findOne({ where: { id: req.session.game_id } });
+    const character = await JSON.parse(JSON.stringify(characterData));
+    const user = await JSON.parse(JSON.stringify(userData));
+    const game = await JSON.parse(JSON.stringify(gameData));
+    res.render("victory",
+      character,
+      user,
+      game
+    )
   } catch (err) {
     console.log(err);
     res.status(500).json(err)
