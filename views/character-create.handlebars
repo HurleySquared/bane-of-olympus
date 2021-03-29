@@ -1,20 +1,26 @@
 <h1>{{user.id}} Create your character.</h1>
-<p>Character name.</p>
-<div class="control" id="character-name">
-  <input id="charName" class="input" type="text" placeholder="Character name">
-</div>
-<p>Character class.</p>
-<div class="control">
-  <div class="select">
-    <select id="character-class">
-      <option>Select Class</option>
-      <option>Hunter</option>
-      <option>Beast</option>
-      <option>Mage</option>
-    </select>
+<div class="columns">
+  <div class="column is-8 is-offset-2">
+    <div class="box">
+    <p>Character name: </p>
+    <div class="control" id="character-name">
+      <input id="charName" class="input" type="text" placeholder="Character name">
+    </div>
+    <p>Character class.</p>
+    <div class="control">
+      <div class="select">
+        <select id="character-class">
+          <option>Select Class</option>
+          <option>Hunter</option>
+          <option>Beast</option>
+          <option>Mage</option>
+        </select>
+      </div>
+    </div>
+    <div class="control">
+      <button id="charButton" class="button create-btn">Submit</button>
+    </div>
+    </div>
   </div>
-</div>
-<div class="control">
-  <button id="charButton" class="button is-primary">Submit</button>
 </div>
 <script src="/js/character.js"></script>
