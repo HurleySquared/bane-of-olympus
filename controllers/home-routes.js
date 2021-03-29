@@ -122,6 +122,7 @@ router.get('/characterselect', withAuth, async (req, res) => {
 
 router.get('/leaderboards', async (req, res) => {
   try {
+    const loggedIn = req.session.loggedIn;
     const leaderboardData = await User.findAll({
       include: [
         {
@@ -142,6 +143,7 @@ router.get('/leaderboards', async (req, res) => {
     });
     console.log(leaderArray);
     res.render("leaderboard", {
+      loggedIn,
       leaderArray,
     });
   } catch (err) {
@@ -152,7 +154,9 @@ router.get('/leaderboards', async (req, res) => {
 
 router.get('/defeat', async (req, res) => {
   try {
-    res.render("defeat")
+    const loggedIn = req.session.loggedIn;
+
+    res.render("defeat", {loggedIn})
   } catch (err) {
     console.log(err);
     res.status(500).json(err)
@@ -161,6 +165,7 @@ router.get('/defeat', async (req, res) => {
 
 router.get('/victory', async (req, res) => {
   try {
+    const loggedIn = req.session.loggedIn;
     const characterData = await Characters.findOne({ where: { game_id: req.session.game_id } });
     const userData = await User.findOne({ where: { id: req.session.id } });
     const gameData = await Game.findOne({ where: { id: req.session.game_id } });
@@ -169,6 +174,7 @@ router.get('/victory', async (req, res) => {
     const game = await JSON.parse(JSON.stringify(gameData));
     res.render("victory",
       {
+        loggedIn,
         character,
         user,
         game
