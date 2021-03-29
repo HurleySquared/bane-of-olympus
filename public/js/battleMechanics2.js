@@ -237,7 +237,7 @@ const init = () => {
       </p>
     </div>
   `;
-  setTimeout(function () { resolveAttacks() }, 7000);
+  setTimeout(function () { resolveAttacks() }, 4000);
 };
 
 init();
