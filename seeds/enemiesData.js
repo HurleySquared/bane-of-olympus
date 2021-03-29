@@ -11,7 +11,7 @@ const enemiesdata = [
     character_name: "Poseidon",
     health: 200,
     damage: 10,
-    image: "",
+    image: "/images/poseidon.jpg",
   },
   {
     character_name: "Zeus",
