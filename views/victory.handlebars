@@ -1,8 +1,23 @@
 <h1>Victory is yours!</h1>
-<p>Let the annals show that {{character.character_name}} slain a god in epic combat on this great day in history!</p>
-<p>Congratulations {{user.username}}</p>
-<p>You now possess a score of {{game.score}} after this victory.</p>
-<p>If you dare to test yourself again, select below.</p>
-<a href="/battle" id="charSelectButton">Commence Battle</a>
-<p>If you have left everything on the battle field, exit here.</p>
-<a href="/" id="exitGameButton">Home</a>
+<div class="column is-half is-offset-one-quarter">
+  <div class="block is-flex-direction-column" id="defeat-message">
+    <div class="block">
+        <p>Let the annals show that {{character.character_name}} slain a god in epic combat on this great day in history!</p>
+        <p>Congratulations {{user.username}}</p>
+        <p>You now possess a score of {{game.score}} after this victory.</p>
+        <p>If you dare to test yourself again, select below.</p>
+    </div>
+    <div class="block" id="defeat-button">
+      <a href="/characterselect" id="charSelectButton">Create New Character</a>
+    </div>
+    <div class="block">
+        <p>If you have left everything on the battle field, exit here.</p>
+    </div>
+    <div class="block has-text-centered">
+      <a href="/" id="exitGameButton">Home</a>
+    </div>
+  </div>
+</div>
+</div>
+
+
