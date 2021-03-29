@@ -56,4 +56,4 @@ const resetButton = () => {
   setTimeout(function() {document.getElementById('attack1').disabled = false}, 7000);
 }
 
-document.getElementById('attack1').addEventListener('click', battleMove)
+battleMove();
