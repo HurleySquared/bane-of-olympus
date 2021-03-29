@@ -32,12 +32,8 @@ h2 {
 }
 
 div a {
-<<<<<<< HEAD
   text-decoration: none;
   font-family: "Eagle Lake", cursive;
-=======
-  font-family: 'Eagle Lake', cursive;
->>>>>>> main
 }
 
 div a:hover {
@@ -108,7 +104,6 @@ div a:hover {
   background-size: cover;
 }
 
-<<<<<<< HEAD
 #game-description {
   position: absolute;
   top: 47%;
@@ -120,8 +115,6 @@ div a:hover {
   border-radius: 4;
 }
 
-=======
->>>>>>> main
 .hero-body .intro {
   position: absolute;
   top: 220px;
@@ -136,20 +129,8 @@ div a:hover {
   text-decoration: none;
   color: var(--red);
   background-color: var(--dark);
-<<<<<<< HEAD
   border-radius: 0.25rem;
   opacity: 0.7;
-=======
-  border-radius: .25rem;
-  border: var(--sandstone) 2px solid;
-  opacity: .9;
-  font-family: 'Caesar Dressing', cursive;
-}
-
-.intro a:hover {
-  transform: rotateY(360deg);
-  transition: ease-in-out 1.5s;
->>>>>>> main
 }
 
 .card {
@@ -221,7 +202,7 @@ div a:hover {
 .log-btn {
   margin-top: 8px;
   background-color: var(--sandstone);
-  color: var(--dark);
+  color: var(--light);
 }
 
 .log-btn:hover {
@@ -241,9 +222,35 @@ div a:hover {
   padding: 8px;
   box-shadow: 8px 8px var(--sandstone);
 }
+/* Character Create Styling */
+
+.char-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-/* leaderboard style */
+.char-field {
+  width: 200px
+}
+
+.char-label {
+  font-size: 20px;
+  color: var(--sandstone);
+}
+
+.char-btn {
+  margin-top: 8px;
+  background-color: var(--sandstone);
+  color: var(--light);
+}
+
+.char-btn:hover {
+  opacity: .8;
+}
+
 .column {
   display: flex;
   justify-content: center;
@@ -257,4 +264,3 @@ div a:hover {
   text-align: center;
   border-radius: 10px;
 }
-  
