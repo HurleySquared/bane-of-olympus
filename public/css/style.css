@@ -264,3 +264,7 @@ div a:hover {
   text-align: center;
   border-radius: 10px;
 }
+
+a {
+  text-decoration: none !important;
+}
