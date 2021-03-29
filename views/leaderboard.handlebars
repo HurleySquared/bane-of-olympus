@@ -3,13 +3,41 @@
     <div class="card leader">
         <div class="card-content ">
             <div class="content">
-                <div>User | Score</div>
+
+                <table class="table is-striped">
+                    {{#each leaderArray}}
+                    <tr>
+                        <th>User</th>
+                        <th>Score</th>
+                    </tr>
+                    <tr>
+                        <td>{{this.[0]}}</td>
+                        <td>{{this.[1]}}</td>
+
+                    </tr>
+                    {{!-- <tr> --}}
+
+                        {{!-- </tr> --}}
+                    {{/each}}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- <h1>Leaderboard</h1>
+<div class="column">
+    <div class="card leader">
+        <div class="card-content ">
+            <div class="content">
                 <table class="table is-striped">
                     <th>User</th>
                     <th>Score</th>
                     <ol>
                         {{#each leaderArray}}
-                        <li class="">{{this.[0]}} - {{this.[1]}}</li>
+                        <li class="">{{this.[0]}} -
+                            <tr>{{this.[1]}}</tr>
+                        </li>
 
                         {{/each}}
                     </ol>
@@ -18,14 +46,4 @@
             </div>
         </div>
     </div>
-</div>
-{{!-- <table class="table is-striped">
-    <th>User</th>
-    <th>Score</th>
-    <ol>
-        {{#each leaderArray}}
-        <li class="">{{this.[0]}} - {{this.[1]}}</li>
-
-        {{/each}}
-    </ol>
-</table> --}}
+</div> --}}
