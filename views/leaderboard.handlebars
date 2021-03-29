@@ -1,5 +1,12 @@
-<div>User | Score</div>
-{{#each leaderArray}}
-<div class="">{{this.[0]}} - {{this.[1]}}</div>
+<h1>Leaderboard</h1>
+<div class="card">
+    <div class="card-content">
+        <div class="content">
+            <div>User | Score</div>
+            {{#each leaderArray}}
+            <div class="">{{this.[0]}} - {{this.[1]}}</div>
 
-{{/each}}
+            {{/each}}
+        </div>
+    </div>
+</div>
