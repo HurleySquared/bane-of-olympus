@@ -5,7 +5,11 @@ const characterdata = [
     character_name: 'Hunter',
     health: 100,
     damage: 10,
+<<<<<<< HEAD
     image: '/images/hunter.jpg',
+=======
+    image: '../images/hunter.jpg',
+>>>>>>> main
     game_id:1,
     
   },
@@ -13,7 +17,11 @@ const characterdata = [
     character_name: 'Barbarian',
     health: 100,
     damage: 10,
+<<<<<<< HEAD
     image: '/images/beast.jpeg',
+=======
+    image: '../images/beast.jpeg',
+>>>>>>> main
     game_id:2,
     
   },
@@ -21,7 +29,11 @@ const characterdata = [
     character_name: 'Mage',
     health: 100,
     damage: 10,
+<<<<<<< HEAD
     image: '/images/mage.jpg',
+=======
+    image: '../images/mage.jpg',
+>>>>>>> main
     game_id:3,
     
   },
