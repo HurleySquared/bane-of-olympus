@@ -122,6 +122,7 @@ router.get('/characterselect', withAuth, async (req, res) => {
 
 router.get('/leaderboards', async (req, res) => {
   try {
+    const loggedIn = req.session.loggedIn;
     const leaderboardData = await User.findAll({
       include: [
         {
@@ -142,6 +143,7 @@ router.get('/leaderboards', async (req, res) => {
     });
     console.log(leaderArray);
     res.render("leaderboard", {
+      loggedIn,
       leaderArray,
     });
   } catch (err) {
