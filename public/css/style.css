@@ -188,7 +188,13 @@ div a:hover {
   display: none;
 }
 
-.alert {
+#user-alert {
+  font-size: 34px;
+  font-weight: 800;
+  padding-top: 100px;
+}
+
+#enemy-alert {
   font-size: 34px;
   font-weight: 800;
   padding-top: 100px;
