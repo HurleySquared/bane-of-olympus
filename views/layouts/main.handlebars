@@ -24,29 +24,29 @@
       </header>
       <nav class="level is-mobile">
         <div class="level-item has-text-centered">
-          <div>
+          <div class="navi">
             <a href="/" class="title">Home</a>
           </div>
         </div>
         <div class="level-item has-text-centered">
-          <div>
-            <a href="/leaderboard" class="title">Leaderboards</a>
+          <div class="navi">
+            <a href="/leaderboards" class="title">Leaderboards</a>
           </div>
         </div>
         {{#if loggedIn}}
         <div class="level-item has-text-centered">
-          <div>
-            <a href="/" class="title" id="logout">Logout</a>
+          <div class="navi">
+            <a href="/" class="title navi" id="logout">Logout</a>
           </div>
         </div>
         {{else}}
         <div class="level-item has-text-centered">
-          <div>
+          <div class="navi">
             <a href="/login" class="title">Login</a>
           </div>
         </div>
         <div class="level-item has-text-centered">
-          <div>
+          <div class="navi">
             <a href="/login" class="title">Sign-Up</a>
           </div>
         </div>
