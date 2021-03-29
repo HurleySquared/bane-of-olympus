@@ -16,7 +16,6 @@ router.get('/battle', async (req, res) => {
   try {
     const getChar = await Characters.findOne({ where: { game_id: req.session.game_id } });
     const loggedIn = req.session.loggedIn;
-    //const enemy = { name: "Zeus", hp: 100, image: "pexels-furkanfdemir-5018188.jpg" };
     const ranEnemy = await Enemies.findOne({ where: { id: Math.floor(Math.random() * 3 + 1) } });
     const character = JSON.parse(JSON.stringify(getChar));
 
@@ -36,7 +35,6 @@ router.get('/battle', async (req, res) => {
       enemyMaxHP: enemy.health,
       enemyDam: enemy.damage,
     });
-    console.log(JSON.parse(battleSave));
 
     res.render('battle', {
       loggedIn,
@@ -123,31 +121,31 @@ router.get('/characterselect', withAuth, async (req, res) => {
 router.get('/leaderboard', async (req, res) => {
   try {
     const leaderboardData = await User.findAll({
-        include: [
-            {
-                model: Game,
-            },
-        ],
+      include: [
+        {
+          model: Game,
+        },
+      ],
     });
     const leaderboard = await JSON.parse(JSON.stringify(leaderboardData));
     const leaderArray = [];
     for (const eachUser of leaderboard) {
-        const usersGame = await Game.findOne({
-            where: { user_id: eachUser.id }
-        })
-        leaderArray.push([eachUser.username, usersGame.score]);
+      const usersGame = await Game.findOne({
+        where: { user_id: eachUser.id }
+      })
+      leaderArray.push([eachUser.username, usersGame.score]);
     };
     await leaderArray.sort((a, b) => {
-        return b[1] - a[1];
+      return b[1] - a[1];
     });
     console.log(leaderArray);
     res.render("leaderboard", {
-        leaderArray,
+      leaderArray,
     });
-} catch (err) {
+  } catch (err) {
     console.log(err);
     res.status(500).json(err);
-}
+  }
 })
 
 module.exports = router;

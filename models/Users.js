@@ -43,10 +43,6 @@ User.init(
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
-      beforeBulkCreate: async (bulkData) => {
-        bulkData.password = await bcrypt.hash(bulkData.password, 10);
-        return bulkData;
-      },
     },
     sequelize,
     freezeTableName: true,

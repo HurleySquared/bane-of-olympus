@@ -5,19 +5,19 @@ const enemiesdata = [
     character_name: "Hades",
     health: 100,
     damage: 20,
-    image: "",
+    image: "/images/Hades.jpg",
   },
   {
     character_name: "Poseidon",
     health: 200,
     damage: 10,
-    image: "",
+    image: "/images/poseidon.jpg",
   },
   {
     character_name: "Zeus",
     health: 150,
     damage: 15,
-    image: "/images/pexels-furkanfdemir-5018188.jpg",
+    image: "/images/Zeus.jpg",
   },
 ];
 
