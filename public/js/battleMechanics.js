@@ -43,27 +43,21 @@ const attackOne = async (event) => {
 
   // create new object for local storage
   const battleSave = {
-    name: character.character_name,
-    characterHP: characterHP,
-    characterDam: characterDam,
-    charImage: charImage,
-    charDamDone: charDam,
-    enemyName: enemy.character_name,
-    enemyImage: enemy.image,
-    enemyHP: enemyHP,
-    enemyDam: enemyDam,
-    enemyDamDone: enemyDamDone,
+    name: character.name, 
+    characterHP: characterHP,  
+    characterDam: characterDam, 
+    charImage: charImage, 
+    charDamDone: charDam, 
+    enemyName: character.enemyName,
+    enemyImage: character.enemyImage,
+    enemyHP: enemyHP, 
+    enemyDam: enemyDam, 
+    enemyDamDone: enemyDamDone, 
   };
   localStorage.setItem('currentBattle', JSON.stringify(battleSave));
 
   
 };
-
-
-
-
-
-
 
 
 
