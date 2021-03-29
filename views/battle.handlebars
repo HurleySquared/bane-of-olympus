@@ -1,50 +1,49 @@
-
-  <header id="battle-header">
-    <h1 id="choose-attack">Choose your attack...</h1>
-  </header>
-  <main class="container" id="battle-field">
-    <section class="player" id="user">
-      <div>
+<header id="battle-header">
+  <h1 id="choose-attack">Choose your attack...</h1>
+</header>
+<main class="container" id="battle-field">
+  <section class="player" id="user">
+    <div>
       <h2>{{character.character_name}}</h2>
       <div class=" animate__animated" id="player1">
-          <img class="player-pic" src="{{character.image}}">
-        </div>
+        <img class="player-pic" src="{{character.image}}">
       </div>
-      <div>
-        <p> Health:
-        <progress id="charHelath" value="{{character.health}}" max="100"></progress>
-        </p>
-      </div>
-      <div id="attacks">
-        <button id="attack1">Attack1</button>
-        <button id="attack2">Attack2</button>
-        <button id="attack3">Attack3</button>
-      </div>
-    </section>
-    <section>
-      <div class="animate__animated hide alert" id="user-alert">
-        <p>{{character.character_name}} attacked,</p>
-        <p>{{enemy.character_name}} lost {{character.damage}} hp</p>
-      </div>
-      <div class="animate__animated hide alert" id="enemy-alert">
-        <p>{{enemy.character_name}} attacked,</p>
-        <p>{{character.character_name}} lost {{enemy.damage}} hp</p>
-      </div>
-    </section>
-    <section class="player" id="boss">
-      <div>
+    </div>
+    <div>
+      <p> Health:
+        <progress id="charHealth" value="{{character.health}}" max="100"></progress>
+      </p>
+    </div>
+    <div id="attacks">
+      <button id="attack1">Attack1</button>
+      <button id="attack2">Attack2</button>
+      <button id="attack3">Attack3</button>
+    </div>
+  </section>
+  <section>
+    <div class="animate__animated hide alert" id="user-alert">
+      <p>{{character.character_name}} attacked,</p>
+      <p>{{enemy.character_name}} lost {{character.damage}} hp</p>
+    </div>
+    <div class="animate__animated hide alert" id="enemy-alert">
+      <p>{{enemy.character_name}} attacked,</p>
+      <p>{{character.character_name}} lost {{enemy.damage}} hp</p>
+    </div>
+  </section>
+  <section class="player" id="boss">
+    <div>
       <h2>{{enemy.character_name}}</h2>
       <div class=" animate__animated" id="enemy">
-          <img class="player-pic" src="{{enemy.image}}">
-        </div>
+        <img class="player-pic" src="{{enemy.image}}">
       </div>
-      <div id="enemyHP">
-        <p> Health:
-        <progress id="enemyHelath" value="{{enemy.health}}" max="100"></progress>
-        </p>
-      </div>
-    </section>
-    <input type="hidden" id="stats" name="stats" value="{{battleSave}}">
-  </main>
-  <script src="/js/battleMechanics.js"></script>
-  <script type="text/javascript" src="/js/battleAnimation.js"></script>
+    </div>
+    <div id="enemyHP">
+      <p> Health:
+        <progress id="enemyHealth" value="{{enemy.health}}" max="100"></progress>
+      </p>
+    </div>
+  </section>
+  <input type="hidden" id="stats" name="stats" value="{{battleSave}}">
+</main>
+<script src="/js/battleMechanics.js"></script>
+{{!-- <script type="text/javascript" src="/js/battleAnimation.js"></script> --}}
