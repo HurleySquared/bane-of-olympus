@@ -12,6 +12,7 @@ body {
   box-sizing: border-box;
   font-family: 'Playfair Display SC', serif;
   height: 100%;
+  background-color: var(--light);
 }
 
 h1 {
@@ -32,6 +33,10 @@ h2 {
 
 div a {
   font-family: 'Eagle Lake', cursive;
+}
+
+div a:hover {
+  text-shadow: 2px 2px 5px var(--red);
 }
 
 .notification {
@@ -100,7 +105,7 @@ max-height: 240px;
 
 .hero-body .intro {
   position: absolute;
-  top: 28%;
+  top: 220px;
   width: 20%;
 }
 
@@ -108,12 +113,19 @@ max-height: 240px;
   display: flex;
   justify-content: center;
   font-size: 24px;
+  height: 40px;
   text-decoration: none;
   color: var(--red);
   background-color: var(--dark);
   border-radius: .25rem;
+  border: var(--sandstone) 2px solid;
   opacity: .9;
   font-family: 'Caesar Dressing', cursive;
+}
+
+.intro a:hover {
+  transform: rotateY(360deg);
+  transition: ease-in-out 1.5s;
 }
 
 .card {
@@ -188,6 +200,10 @@ max-height: 240px;
   color: var(--dark);
 }
 
+.log-btn:hover {
+  opacity: .8;
+}
+
 .box {
   display: flex;
   height: 400px;
@@ -199,4 +215,5 @@ max-height: 240px;
   justify-content: center;
   font-size: 20px;
   padding: 8px;
+  box-shadow: 8px 8px var(--sandstone);
 }
