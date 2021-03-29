@@ -9,6 +9,7 @@ const enemyDam = character.enemyDam;
 const saveFight = (characterHP, charDam, enemyHP, enemyDamDone) => {
   // create new object for local storage
   const battleSave = {
+    id: character.id,
     name: character.name,
     characterMaxHP: character.characterMaxHP,
     characterDam: character.characterDam,

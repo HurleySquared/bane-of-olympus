@@ -56,4 +56,5 @@ const resetButton = () => {
   setTimeout(function() {document.getElementByTagName('button').disabled = false}, 4000);
 }
 
+
 battleMove();
