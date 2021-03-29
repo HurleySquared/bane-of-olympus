@@ -270,3 +270,14 @@ a {
 a {
   text-decoration: none !important;
 }
+
+#defeat-message {
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+}
+
+#defeat-button {
+  display: flex;
+  justify-content: center;
+}
