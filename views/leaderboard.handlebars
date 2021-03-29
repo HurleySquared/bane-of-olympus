@@ -4,13 +4,28 @@
         <div class="card-content ">
             <div class="content">
                 <div>User | Score</div>
-                <ol>
-                    {{#each leaderArray}}
-                    <li class="">{{this.[0]}} - {{this.[1]}}</li>
+                <table class="table is-striped">
+                    <th>User</th>
+                    <th>Score</th>
+                    <ol>
+                        {{#each leaderArray}}
+                        <li class="">{{this.[0]}} - {{this.[1]}}</li>
 
-                    {{/each}}
-                </ol>
+                        {{/each}}
+                    </ol>
+                </table>
+
             </div>
         </div>
     </div>
 </div>
+{{!-- <table class="table is-striped">
+    <th>User</th>
+    <th>Score</th>
+    <ol>
+        {{#each leaderArray}}
+        <li class="">{{this.[0]}} - {{this.[1]}}</li>
+
+        {{/each}}
+    </ol>
+</table> --}}
