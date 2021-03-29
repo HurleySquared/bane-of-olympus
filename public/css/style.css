@@ -37,7 +37,6 @@ h2 {
 }
 
 div a {
-  text-decoration: none;
   font-family: "Eagle Lake", cursive;
 }
 
@@ -83,7 +82,7 @@ div a:hover {
   align-items: center;
   justify-content: center;
   background-color: #f3f3f3;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 #game-description {
@@ -188,7 +187,13 @@ a {
   display: none;
 }
 
-.alert {
+#user-alert {
+  font-size: 34px;
+  font-weight: 800;
+  padding-top: 100px;
+}
+
+#enemy-alert {
   font-size: 34px;
   font-weight: 800;
   padding-top: 100px;
@@ -202,11 +207,11 @@ a {
 .log-btn {
   margin-top: 8px;
   background-color: var(--sandstone);
-  color: var(--light);
+  color: var(--dark);
 }
 
 .log-btn:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .box {
@@ -247,6 +252,7 @@ a {
   opacity: .8;
 }
 
+/* leaderboard style */
 .column {
   display: flex;
   justify-content: center;
