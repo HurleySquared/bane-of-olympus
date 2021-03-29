@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Game, Characters } = require("../../models");
 const withAuth = require("../../utils/auth");
+const Sequelize = require("sequelize");
 
 // changed to just / and we'll get the id from the req.body
 router.post('/', withAuth, async (req, res) => {
@@ -63,13 +64,16 @@ router.delete('/:id', withAuth, async (req, res) => {
     }
 });
 
-router.put('/:id', withAuth, async (req, res) => {
+router.put('/id', withAuth, async (req, res) => {
     try {
-        const gameData = await Game.update(req.body, {
-            where: {
-                id: req.params.id
+        const gameData = await Game.update(
+            { score: Sequelize.literal(`score + ${req.body.score}`) },
+            {
+                where: {
+                    id: req.session.game_id
+                }
             }
-        })
+        )
         if (!gameData) {
             res.status(404).json({ message: 'No game found with this id!' });
             return;
