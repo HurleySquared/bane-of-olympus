@@ -32,11 +32,7 @@ h2 {
 }
 
 div a {
-<<<<<<< HEAD
   font-family: "Eagle Lake", cursive;
-=======
-  font-family: 'Eagle Lake', cursive;
->>>>>>> main
 }
 
 div a:hover {
@@ -121,11 +117,7 @@ div a:hover {
   text-decoration: none;
   color: var(--red);
   background-color: var(--dark);
-<<<<<<< HEAD
   border-radius: 0.25rem;
-=======
-  border-radius: .25rem;
->>>>>>> main
   border: var(--sandstone) 2px solid;
   opacity: 0.9;
   font-family: "Caesar Dressing", cursive;
