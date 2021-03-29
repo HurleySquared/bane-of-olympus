@@ -143,6 +143,44 @@ const attackThree = async (event) => {
   saveFight(characterHP, charDam, enemyHP, enemyDamDone);
 };
 
+const attackThree = async (event) => {
+  await event.preventDefault();
+
+  switch (charImage) {
+    case '/images/mage.png':
+      var charClass = 'Mage';
+      var atkMult = .2;
+      break;
+    case '/images/beast.png':
+      var charClass = 'Barbarian';
+      var atkMult = 1;
+      break;
+    case '/images/hunter.png':
+      var charClass = 'Hunter';
+      var atkMult = 1;
+      break;
+  };
+
+  // character attack
+  if (Math.random() < 0.99) {
+    var charDam = (characterDam * atkMult);
+  } else {
+    var charDam = 0;
+  };
+  enemyHP -= charDam;
+
+  // enemy attack
+  if (Math.random() < 0.5) {
+    var enemyDamDone = enemyDam;
+  } else {
+    var enemyDamDone = 0;
+  };
+  characterHP -= enemyDamDone;
+
+  saveFight(characterHP, charDam, enemyHP, enemyDamDone);
+};
+
 document.getElementById('attack1').addEventListener('click', attackOne);
 document.getElementById('attack2').addEventListener('click', attackTwo);
 document.getElementById('attack3').addEventListener('click', attackThree);
+document.getElementById('attack4').addEventListener('click', attackFour);
