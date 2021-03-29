@@ -24,6 +24,7 @@ router.get('/battle', async (req, res) => {
     const enemy = JSON.parse(JSON.stringify(ranEnemy));
     console.log(enemy);
     const battleSave = JSON.stringify({
+      id: character.id,
       name: character.character_name,
       characterHP: character.health,
       characterMaxHP: character.health,
@@ -104,11 +105,11 @@ router.get('/characterselect', withAuth, async (req, res) => {
         game_id: req.session.game_id
       },
     });
-    const sendGame = await JSON.parse(JSON.stringify(gameData));
+    const sendChar = await JSON.parse(JSON.stringify(gameData));
     res.render('character-select', {
       loggedIn,
       sendUser,
-      sendGame
+      sendChar
     })
   } else {
     res.render('character-create', {
@@ -118,7 +119,7 @@ router.get('/characterselect', withAuth, async (req, res) => {
   }
 })
 
-router.get('/leaderboard', async (req, res) => {
+router.get('/leaderboards', async (req, res) => {
   try {
     const leaderboardData = await User.findAll({
       include: [
@@ -146,6 +147,24 @@ router.get('/leaderboard', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
-})
+});
+
+router.get('/defeat', async (req, res) => {
+  try {
+    res.render("defeat")
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err)
+  }
+});
+
+router.get('/victory', async (req, res) => {
+  try {
+    res.render("victory")
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err)
+  }
+});
 
 module.exports = router;

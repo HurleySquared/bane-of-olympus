@@ -6,10 +6,44 @@ const characterDam = character.characterDam;
 const charImage = character.charImage;
 var enemyHP = character.enemyHP;
 const enemyDam = character.enemyDam;
+const charID = character.id;
+const score = (characterHP / character.characterMaxHP) * 200;
+
+const resolveAttacks = async () => {
+  if (characterHP <= 0) {
+    const lost = await fetch('/api/characters/', {
+      method: 'DELETE',
+      body: JSON.stringify({ "id": charID }),
+      headers: { 'Content-Type': 'application/json' },
+    })
+    if (lost.ok) {
+      await localStorage.clear();
+      await document.location.replace('/defeat')
+    } else {
+      console.log('error deleting')
+    }
+  }
+  if (enemyHP <= 0) {
+    const won = await fetch('/api/game/id', {
+      method: 'PUT',
+      body: JSON.stringify({ "score": score }),
+      headers: { 'Content-Type': 'application/json' },
+    })
+    if (won.ok) {
+      await localStorage.clear();
+      await document.location.replace('/victory')
+    } else {
+      console.log('error with win')
+    }
+  }
+};
 
 const saveFight = async (newCharacterHP, charDam, newEnemyHP, enemyDamDone) => {
+  console.log(newCharacterHP);
+
   // create new object for local storage
   const battleSave = {
+    id: character.id,
     name: character.name,
     characterMaxHP: character.characterMaxHP,
     characterDam: character.characterDam,
@@ -55,8 +89,8 @@ const attackOne = async (event) => {
   enemyHP -= charDam;
 
   // enemy attack
-  if (Math.random() < 0.5) {
-    var enemyDamDone = enemyDam;
+  if (Math.random() < 0.99) {
+    var enemyDamDone = enemyDam + 90;
   } else {
     var enemyDamDone = 0;
   };
@@ -150,7 +184,7 @@ const init = () => {
   document.getElementById('charCard').innerHTML = `
   <h2>${character.name}</h2>
   <div class=" animate__animated" id="player1">
-    <img class="player-pic" src="${character.charImage}">
+    <img class="player-pic" id="player-image" src="${character.charImage}">
   </div>
   `;
   document.getElementById('playerHealth').innerHTML = `
@@ -203,6 +237,7 @@ const init = () => {
       </p>
     </div>
   `;
+  setTimeout(function () { resolveAttacks() }, 7000);
 };
 
 init();

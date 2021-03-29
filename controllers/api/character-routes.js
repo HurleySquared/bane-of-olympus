@@ -75,11 +75,11 @@ router.put("/:id", withAuth, async (req, res) => {
 });
 
 // delete
-router.delete("/:id", withAuth, async (req, res) => {
+router.delete("/", withAuth, async (req, res) => {
   try {
     const characterData = await Characters.destroy({
       where: {
-        id: req.params.id,
+        id: req.body.id,
       },
     });
     if (!characterData) {

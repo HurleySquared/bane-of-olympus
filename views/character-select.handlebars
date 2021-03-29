@@ -3,22 +3,21 @@
   <div class="card" id="character-card">
     {{!-- <div class="card-image"> --}}
       <figure id="card1" class="image">
-        <img src="/images/mage.png" alt="">
+        <img src="{{sendChar.image}}" alt="">
       </figure>
       {{!--
     </div> --}}
     <div class="card-content">
       <div class="media">
         <div class="media-content">
-          <p class="title is-4">{{sendGame.character_name}}</p>
+          <p class="title is-4">{{sendChar.character_name}}</p>
         </div>
       </div>
       <div class="content">
         <ul>
-          <li>Score: {{games.score}}</li>
-          <li>Damage: {{sendGame.damage}}</li>
-          <li>Strong Attack: {{character.strong}}</li>
-          <li>Wisdom Attack: {{character.wisdom}}</li>
+          <li>Score: {{sendUser.games.score}}</li>
+          <li>Damage: {{sendChar.damage}}</li>
+          <li>Hit Points: {{sendChar.health}}</li>
         </ul>
       </div>
     </div>

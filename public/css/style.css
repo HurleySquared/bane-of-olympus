@@ -10,7 +10,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Playfair Display SC', serif;
+  font-family: "Playfair Display SC", serif;
   height: 100%;
   background-color: var(--light);
 }
@@ -20,7 +20,7 @@ h1 {
   color: var(--red);
   font-size: 80px;
   font-weight: 700;
-  font-family: 'Caesar Dressing', cursive;
+  font-family: "Caesar Dressing", cursive;
   margin-bottom: 8px;
   text-shadow: 4px 4px var(--sandstone);
 }
@@ -32,7 +32,8 @@ h2 {
 }
 
 div a {
-  font-family: 'Eagle Lake', cursive;
+  text-decoration: none;
+  font-family: "Eagle Lake", cursive;
 }
 
 div a:hover {
@@ -56,8 +57,8 @@ div a:hover {
 }
 
 .player-pic {
-max-width: 240px;
-max-height: 240px;
+  max-width: 240px;
+  max-height: 240px;
 }
 
 #alert {
@@ -103,6 +104,17 @@ max-height: 240px;
   background-size: cover;
 }
 
+#game-description {
+  position: absolute;
+  top: 47%;
+  color: var(--sandstone);
+  width: 80%;
+  font-size: 20px;
+  background-color: var(--dark);
+  opacity: 0.8;
+  border-radius: 4;
+}
+
 .hero-body .intro {
   position: absolute;
   top: 220px;
@@ -117,15 +129,8 @@ max-height: 240px;
   text-decoration: none;
   color: var(--red);
   background-color: var(--dark);
-  border-radius: .25rem;
-  border: var(--sandstone) 2px solid;
-  opacity: .9;
-  font-family: 'Caesar Dressing', cursive;
-}
-
-.intro a:hover {
-  transform: rotateY(360deg);
-  transition: ease-in-out 1.5s;
+  border-radius: 0.25rem;
+  opacity: 0.7;
 }
 
 .card {
@@ -161,8 +166,8 @@ max-height: 240px;
 }
 
 .player-pic {
-max-width: 240px;
-max-height: 240px;
+  max-width: 240px;
+  max-height: 240px;
 }
 
 .animate__animated.animate__headShake {
@@ -207,7 +212,7 @@ max-height: 240px;
 .box {
   display: flex;
   height: 400px;
-  font-family: 'Playfair Display SC', serif;
+  font-family: "Playfair Display SC", serif;
   background-color: var(--dark);
   color: var(--sandstone);
   margin-top: 40px;

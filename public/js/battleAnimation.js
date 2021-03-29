@@ -8,13 +8,13 @@ const enemyAlert = document.getElementById('enemy-alert');
 const battleMove = () => {
   headerVisible();
   playerMove();
-  setTimeout(function() {enemyMove()}, 3500);
+  setTimeout(function() {enemyMove()}, 2000);
   resetButton();
 }
 
 const headerVisible = () => {
   chooseAttack.classList.toggle('hidden');
-  setTimeout(function() {chooseAttack.classList.toggle('hidden')}, 7000);
+  setTimeout(function() {chooseAttack.classList.toggle('hidden')}, 3500);
 }
 
 const playerMove = () => {
@@ -26,7 +26,7 @@ const playerMove = () => {
 const userAlertToggle = () => {
   userAlert.classList.toggle('hide');
   userAlert.classList.toggle('animate__zoomIn');
-  setTimeout(function() {resetUserAlert()}, 3500);
+  setTimeout(function() {resetUserAlert()}, 2000);
 }
 
 const resetUserAlert = () => {
@@ -43,7 +43,7 @@ const enemyMove = () => {
 const enemyAlertToggle = () => {
   enemyAlert.classList.toggle('hide');
   enemyAlert.classList.toggle('animate__zoomIn');
-  setTimeout(function() {resetEnemyAlert()}, 3500);
+  setTimeout(function() {resetEnemyAlert()}, 2000);
 }
 
 const resetEnemyAlert = () => {
@@ -52,8 +52,9 @@ const resetEnemyAlert = () => {
 }
 
 const resetButton = () => {
-  document.getElementById('attack1').disabled = true;
-  setTimeout(function() {document.getElementById('attack1').disabled = false}, 7000);
+  document.getElementsByTagName('button').disabled = true;
+  setTimeout(function() {document.getElementByTagName('button').disabled = false}, 4000);
 }
+
 
 battleMove();
