@@ -6,7 +6,7 @@
     <div>
       <h2>{{character.character_name}}</h2>
       <div class=" animate__animated" id="player1">
-        <img class="player-pic" src="{{character.image}}">
+        <img class="player-pic" id="player1Image" src="{{character.image}}">
       </div>
     </div>
     <div>
@@ -46,4 +46,5 @@
   <input type="hidden" id="stats" name="stats" value="{{battleSave}}">
 </main>
 <script src="/js/battleMechanics.js"></script>
+<script src="/js/setAttacks.js"></script>
 {{!-- <script type="text/javascript" src="/js/battleAnimation.js"></script> --}}
