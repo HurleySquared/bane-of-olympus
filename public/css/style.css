@@ -270,8 +270,6 @@ a {
 a {
   text-decoration: none !important;
 }
-<<<<<<< HEAD
-=======
 
 #defeat-message {
   display: flex;
@@ -287,7 +285,7 @@ a {
 .gameScore {
   color: #911d1d;
   font-weight: 1000;
-  text-shadow: 2px 1px var(--sandstone)
+  text-shadow: 2px 1px var(--sandstone);
 }
 
 #exitGameButton {
@@ -299,4 +297,3 @@ a {
   padding: 4px;
   font-size: 24px;
 }
->>>>>>> main
