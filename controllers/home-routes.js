@@ -1,7 +1,25 @@
 const withAuth = require('../utils/auth');
+const getGame = require('../utils/auth');
 const { User, Game, Enemies, Characters } = require('../models');
 const { findOne } = require('../models/Characters');
 const router = require('express').Router();
+
+const getGame = async (req, res, next) => {
+  console.log('getting game');
+  const gatherGame = await Game.findOne({
+    where: {
+      user_id: req.session.user_id
+    },
+    include: [
+      {
+        model: Characters,
+        attributes: ['id'],
+      }
+    ]
+  });
+  req.game = gatherGame;
+  next();
+}
 
 router.get('/', async (req, res) => {
   try {
@@ -75,20 +93,21 @@ router.get('/login', (req, res) => {
 
 
 // must be logged in withAuth, will show character select handlebars
-router.get('/characterselect', withAuth, async (req, res) => {
+router.get('/characterselect', withAuth, getGame, async (req, res) => {
   const loggedIn = req.session.loggedIn;
-  const getGame = await Game.findOne({
-    where: {
-      user_id: req.session.user_id
-    },
-    include: [
-      {
-        model: Characters,
-        attributes: ['id'],
-      }
-    ]
-  });
-  const userGame = await JSON.parse(JSON.stringify(getGame));
+  // const getGame = await Game.findOne({
+  //   where: {
+  //     user_id: req.session.user_id
+  //   },
+  //   include: [
+  //     {
+  //       model: Characters,
+  //       attributes: ['id'],
+  //     }
+  //   ]
+  // });
+  console.log("game:", req.game);
+  const userGame = await JSON.parse(JSON.stringify(req.game));
   const userData = await User.findOne({
     where: {
       id: req.session.user_id
