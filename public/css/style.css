@@ -232,3 +232,17 @@ div a:hover {
   text-align: center;
   border-radius: 10px;
 }
+
+.column {
+  display: flex;
+  justify-content: center;
+}
+.leader {
+  width: 1000px;
+  height: 700px;
+  background-color: var(--sandstone);
+  border-radius: 10px;
+  color: aliceblue;
+  text-align: center;
+  border-radius: 10px;
+}
