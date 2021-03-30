@@ -4,7 +4,7 @@
 
 - [User Story](#Userstory)
 - [Description](#Description)
-- [Resources](#Resources)
+- [Technologies Used](#Technologiesused)
 - [Links](#Links)
 - [Heroku Link](#Heroku)
 - [Contributors](#contributors)
