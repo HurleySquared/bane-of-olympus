@@ -55,6 +55,10 @@ Mage: <https://pixabay.com/illustrations/fantasy-mage-ship-wreck-sun-fog-4382556
 
 Beast: <https://imgur.com/gallery/cuJlvRZ>
 
+Poseidon: <https://pixabay.com/photos/poseidon-sea-greek-mythology-1621062/>
+
+Hunter: <https://pixabay.com/photos/lion-warrior-woman-heroine-fantasy-4098784/>
+
 ## Screenshots of application
 ![Home Page](/public/images/homepage.png)
 ![Login/Signup](/public/images/login-signup.png)
