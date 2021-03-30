@@ -322,7 +322,8 @@ a {
   color: var(--red);
   font-size: 16px;
   font-weight: bolder;
-  text-shadow: 2px 1px var(--sandstone);
+  /* text-shadow: 2px 1px var(--sandstone); */
+  border-radius: 10px;
   padding: 6px;
   width: 48%;
   height: 60px;
@@ -330,10 +331,11 @@ a {
 }
 
 @media only screen and (max-width: 600px) {
-  nav {
+  nav, #battle-field, #boss, #user-alert, #enemy-alert {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+    align-content: center;
   }
 }
