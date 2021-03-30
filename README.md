@@ -25,6 +25,7 @@
 - MySql
 - CSS
 - Javascript
+- Animate.css
 - NPM Packages - BCrypt, connect-session-sequelize, dotenv, express, handlebars, express-seession, mysql2, sequelize 
 
 # Heroku Deploy
