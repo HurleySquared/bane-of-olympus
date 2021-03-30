@@ -8,19 +8,19 @@ const characterImage = document
 
 const setAttacks = () => {
   switch (characterImage) {
-    case "/images/mage.png":
+    case "/images/mage.jpg":
       charAttack1.innerHTML = "Water Jet";
       charAttack2.innerHTML = "Prayer of Healing";
       charAttack3.innerHTML = "Fireball";
       charAttack4.innerHTML = "Stone Barrier";
       break;
-    case "/images/beast.png":
+    case "/images/beast.jpeg":
       charAttack1.innerHTML = "Slash";
       charAttack2.innerHTML = "Reckless Swing";
       charAttack3.innerHTML = "Throw Sand";
       charAttack4.innerHTML = "Shield Bash";
       break;
-    case "/images/hunter.png":
+    case "/images/hunter.jpg":
       charAttack1.innerHTML = "Quick Shot";
       charAttack2.innerHTML = "Charged Arrow";
       charAttack3.innerHTML = "Trick Shot";

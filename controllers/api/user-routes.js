@@ -60,7 +60,6 @@ router.post("/login", async (req, res) => {
       },
     });
 
-    console.log(gameDataID);
 
     req.session.save(() => {
       req.session.user_id = dbUserData.id;

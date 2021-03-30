@@ -4,9 +4,9 @@ const charClass = document.querySelector('#character-class');
 const newCharCreate = async (event) => {
   event.preventDefault();
   let charImage;
-  if (charClass.value == 'Beast') { charImage = '/images/beast.png' };
-  if (charClass.value == 'Hunter') { charImage = '/images/hunter.png' };
-  if (charClass.value == 'Mage') { charImage = '/images/mage.png' };
+  if (charClass.value == 'Beast') { charImage = '/images/beast.jpeg' };
+  if (charClass.value == 'Hunter') { charImage = '/images/hunter.jpg' };
+  if (charClass.value == 'Mage') { charImage = '/images/mage.jpg' };
   const charData = JSON.stringify({ "char": charName.value, "charImage": charImage })
   if (charName && charClass) {
     const response = await fetch('/api/characters/', {
