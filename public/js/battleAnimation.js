@@ -13,8 +13,8 @@ const battleMove = () => {
 }
 
 const headerVisible = () => {
-  chooseAttack.classList.toggle('hidden');
-  setTimeout(function() {chooseAttack.classList.toggle('hidden')}, 4000);
+  chooseAttack.classList.toggle('hide');
+  setTimeout(function() {chooseAttack.classList.toggle('hide')}, 4000);
 }
 
 const playerMove = () => {

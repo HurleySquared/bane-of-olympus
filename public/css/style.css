@@ -57,7 +57,7 @@ div a:hover {
 
 #battle-field {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   width: 100vw;
 }
 
@@ -186,12 +186,14 @@ a {
 }
 
 #user-alert {
+  text-align: center;
   font-size: 34px;
   font-weight: 800;
   padding-top: 100px;
 }
 
 #enemy-alert {
+  text-align: center;
   font-size: 34px;
   font-weight: 800;
   padding-top: 100px;
@@ -353,6 +355,10 @@ a {
     flex-direction: column;
     justify-content: center;
     align-content: center;
+  }
+
+  .user-alert {
+    text-align: center;
   }
 }
 

@@ -217,9 +217,13 @@ const attackFour = async (event) => {
 // runs on page load, 
 const init = () => {
   if (screen.width < 700) {
-    document.getElementById('mobile').innerHTML = `<section id="attackResult"></section>`
+    document.getElementById('mobile').innerHTML = `<section id="attackResult">
+    <h2 id="choose-attack" class=" ">Choose your attack...</h2>
+    </section>`
   } else {
-    document.getElementById('desktop').innerHTML = `<section id="attackResult"></section>`
+    document.getElementById('desktop').innerHTML = `<section id="attackResult">
+    <h2 id="choose-attack" class=" ">Choose your attack...</h2>
+    </section>`
   }
   // document.getElementById('charHP').innerHTML = character.characterHP;
   document.getElementById('charCard').innerHTML = `
@@ -236,15 +240,15 @@ const init = () => {
 
   // Write depending on if character hit or missed
   if (character.charDamDone) {
-    document.getElementById('attackResult').innerHTML = `
+    document.getElementById('attackResult').innerHTML += `
     <div class="animate__animated hide" id="user-alert">
-      <p>${character.name} attacked,</p>
-      <p>${character.enemyName} lost ${character.charDamDone} hp</p>
+      <h2>${character.name} attacked,</h2>
+      <h2>${character.enemyName} lost ${character.charDamDone} hp</h2>
     </div>`;
   } else {
-    document.getElementById('attackResult').innerHTML = `
+    document.getElementById('attackResult').innerHTML += `
     <div class="animate__animated hide" id="user-alert">
-      <p>${character.name} missed!</p>
+      <h2>${character.name} missed!</h2>
     </div>
     `
   };
@@ -253,14 +257,14 @@ const init = () => {
   if (character.enemyDamDone) {
     document.getElementById('attackResult').innerHTML += `
       <div class="animate__animated hide" id="enemy-alert">
-        <p>${character.enemyName} attacked,</p>
-        <p>${character.name} lost ${character.enemyDamDone} hp</p>
+        <h2>${character.enemyName} attacked,</h2>
+        <h2>${character.name} lost ${character.enemyDamDone} hp</h2>
       </div>
     `;
   } else {
     document.getElementById('attackResult').innerHTML += `
     <div class="animate__animated hide" id="enemy-alert">
-      <p>${character.enemyName} missed!</p>
+      <h2>${character.enemyName} missed!</h2>
     </div>
     `
   };
