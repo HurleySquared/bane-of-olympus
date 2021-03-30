@@ -30,6 +30,9 @@
 # Heroku Deploy
 [Bane of Olympus Heroku](https://baneofolympus.herokuapp.com/)
 
+# GitHub Repo
+[Bane of Olympus Repo](https://github.com/HurleySquared/bane-of-olympus)
+
 # Contributors
 
 Shawn Fox : <https://github.com/SFoxGit>
