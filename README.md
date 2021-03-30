@@ -12,14 +12,20 @@
 
 # User Story
 
+- As a User, I want to be able to play a god killing game
+- As a User, I want to be able to register my information for the future when I can play
+- As a User, I want to see a leaderboard and my scores in the ranking
+
 # Description
 
-# Resources
+
+# Technologies Used
 
 - Bulma UI
 - MySql
 - CSS
-- Javascriptt
+- Javascript
+- NPM Packages - BCrypt, connect-session-sequelize, dotenv, express, handlebars, express-seession, mysql2, sequelize 
 
 # Heroku Deploy
 
@@ -33,8 +39,6 @@ Eric Hurley: <https://github.com/HurleySquared>
 
 Joshua Wallace: <https://github.com/jwallace212>
 
-# Credits
-
 ## Images:
 
 Hades : <https://wallpaperaccess.com/hades>
@@ -44,3 +48,5 @@ Zeus : <https://wallpaperaccess.com/zeus>
 Mage: <https://pixabay.com/illustrations/fantasy-mage-ship-wreck-sun-fog-4382556/>
 
 Beast: <https://imgur.com/gallery/cuJlvRZ>
+
+## Screenshots of application
