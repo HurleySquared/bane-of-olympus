@@ -298,6 +298,11 @@ a {
   font-size: 24px;
 }
 
+.table {
+  font-weight: bolder;
+  background-color: var(--light);
+}
+
 @media only screen and (max-width: 600px) {
   nav {
     display: flex;

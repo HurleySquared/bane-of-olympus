@@ -4,7 +4,6 @@ const { findOne } = require('../models/Characters');
 const router = require('express').Router();
 
 const getGame = async (req, res, next) => {
-  console.log('getting game');
   const gatherGame = await Game.findOne({
     where: {
       user_id: req.session.user_id
@@ -37,10 +36,7 @@ router.get('/battle', async (req, res) => {
     const ranEnemy = await Enemies.findOne({ where: { id: Math.floor(Math.random() * 3 + 1) } });
     const character = JSON.parse(JSON.stringify(getChar));
 
-    console.log(Math.floor(Math.random() * 3 + 1));
-    console.log(ranEnemy);
     const enemy = JSON.parse(JSON.stringify(ranEnemy));
-    console.log(enemy);
     const battleSave = JSON.stringify({
       id: character.id,
       name: character.character_name,
@@ -105,7 +101,6 @@ router.get('/characterselect', withAuth, getGame, async (req, res) => {
   //     }
   //   ]
   // });
-  console.log("game:", req.game);
   const userGame = await JSON.parse(JSON.stringify(req.game));
   const userData = await User.findOne({
     where: {
@@ -117,7 +112,6 @@ router.get('/characterselect', withAuth, getGame, async (req, res) => {
   })
   const sendUser = await JSON.parse(JSON.stringify(userData));
 
-  console.log(sendUser);
   if (userGame.character !== null) {
     const gameData = await Characters.findOne({
       where: {
@@ -159,7 +153,6 @@ router.get('/leaderboards', async (req, res) => {
     await leaderArray.sort((a, b) => {
       return b[1] - a[1];
     });
-    console.log(leaderArray);
     res.render("leaderboard", {
       loggedIn,
       leaderArray,
