@@ -1,5 +1,4 @@
 const withAuth = require('../utils/auth');
-const getGame = require('../utils/auth');
 const { User, Game, Enemies, Characters } = require('../models');
 const { findOne } = require('../models/Characters');
 const router = require('express').Router();
