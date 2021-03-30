@@ -19,12 +19,13 @@
 # Description
 
 
-# Resources
+# Technologies Used
 
 - Bulma UI
 - MySql
 - CSS
-- Javascriptt
+- Javascript
+- NPM Packages - BCrypt, connect-session-sequelize, dotenv, express, handlebars, express-seession, mysql2, sequelize 
 
 # Heroku Deploy
 
@@ -37,8 +38,6 @@ Ian Mcbrayer: <https://github.com/ihm57511>
 Eric Hurley: <https://github.com/HurleySquared>
 
 Joshua Wallace: <https://github.com/jwallace212>
-
-# Credits
 
 ## Images:
 
