@@ -22,7 +22,6 @@ router.get("/", async (req, res) => {
     await leaderArray.sort((a, b) => {
       return b[1] - a[1];
     });
-    console.log(leaderArray);
     res.render("leaderboard", {
       leaderArray,
     });

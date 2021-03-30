@@ -20,7 +20,6 @@ const resolveAttacks = async () => {
       await localStorage.clear();
       await document.location.replace('/defeat')
     } else {
-      console.log('error deleting')
     }
   }
   if (enemyHP <= 0) {
@@ -33,13 +32,11 @@ const resolveAttacks = async () => {
       await localStorage.clear();
       await document.location.replace('/victory')
     } else {
-      console.log('error with win')
     }
   }
 };
 
 const saveFight = async (newCharacterHP, charDam, newEnemyHP, enemyDamDone) => {
-  console.log(newCharacterHP);
 
   // create new object for local storage
   const battleSave = {
@@ -177,6 +174,43 @@ const attackThree = async (event) => {
   saveFight(characterHP, charDam, enemyHP, enemyDamDone);
 };
 
+const attackFour = async (event) => {
+  await event.preventDefault();
+
+  switch (charImage) {
+    case '/images/mage.jpg':
+      var charClass = 'Mage';
+      var atkMult = 0.2;
+      break;
+    case '/images/beast.jpeg':
+      var charClass = 'Barbarian';
+      var atkMult = 0.5;
+      break;
+    case '/images/hunter.jpg':
+      var charClass = 'Hunter';
+      var atkMult = 0.6;
+      break;
+  };
+
+  // character attack
+  if (Math.random() < 0.99) {
+    var charDam = (characterDam * atkMult);
+  } else {
+    var charDam = 0;
+  };
+  enemyHP -= charDam;
+
+  // enemy attack
+  if (Math.random() < 0.1) {
+    var enemyDamDone = enemyDam;
+  } else {
+    var enemyDamDone = 0;
+  };
+  characterHP -= enemyDamDone;
+
+  saveFight(characterHP, charDam, enemyHP, enemyDamDone);
+};
+
 // runs on page load, 
 const init = () => {
 
@@ -245,3 +279,4 @@ init();
 document.getElementById('attack1').addEventListener('click', attackOne);
 document.getElementById('attack2').addEventListener('click', attackTwo);
 document.getElementById('attack3').addEventListener('click', attackThree);
+document.getElementById('attack4').addEventListener('click', attackFour);

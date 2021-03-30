@@ -39,7 +39,6 @@ router.get('/id', withAuth, async (req, res) => {
             ]
         })
         const findGame = await JSON.parse(JSON.stringify(gameData))
-        console.log(findGame);
         res.status(200).json(gameData);
     } catch (err) {
         res.status(400).json(err);

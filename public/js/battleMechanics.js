@@ -75,17 +75,17 @@ const attackTwo = async (event) => {
       break;
     case '/images/beast.jpeg':
       var charClass = 'Barbarian';
-      var atkMult = 1.2;
+      var atkMult = 2.4;
       break;
     case '/images/hunter.jpg':
       var charClass = 'Hunter';
-      var atkMult = 1;
+      var atkMult = 2;
       break;
   };
 
   // character attack
   if (charClass !== 'Mage') {
-    if (Math.random() < 0.5) {
+    if (Math.random() < 0.6) {
       var charDam = (characterDam * atkMult);
     } else {
       var charDam = 0;
@@ -143,6 +143,44 @@ const attackThree = async (event) => {
   saveFight(characterHP, charDam, enemyHP, enemyDamDone);
 };
 
+const attackFour = async (event) => {
+  await event.preventDefault();
+
+  switch (charImage) {
+    case '/images/mage.jpg':
+      var charClass = 'Mage';
+      var atkMult = 0.2;
+      break;
+    case '/images/beast.jpeg':
+      var charClass = 'Barbarian';
+      var atkMult = 0.5;
+      break;
+    case '/images/hunter.jpg':
+      var charClass = 'Hunter';
+      var atkMult = 0.6;
+      break;
+  };
+
+  // character attack
+  if (Math.random() < 0.99) {
+    var charDam = (characterDam * atkMult);
+  } else {
+    var charDam = 0;
+  };
+  enemyHP -= charDam;
+
+  // enemy attack
+  if (Math.random() < 0.1) {
+    var enemyDamDone = enemyDam;
+  } else {
+    var enemyDamDone = 0;
+  };
+  characterHP -= enemyDamDone;
+
+  saveFight(characterHP, charDam, enemyHP, enemyDamDone);
+};
+
 document.getElementById('attack1').addEventListener('click', attackOne);
 document.getElementById('attack2').addEventListener('click', attackTwo);
 document.getElementById('attack3').addEventListener('click', attackThree);
+document.getElementById('attack4').addEventListener('click', attackFour);
