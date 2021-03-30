@@ -60,7 +60,7 @@ const saveFight = async (newCharacterHP, charDam, newEnemyHP, enemyDamDone) => {
 };
 
 const attackOne = async (event) => {
-  await event.preventDefault();
+  event.preventDefault();
 
   switch (charImage) {
     case '/images/mage.jpg':
@@ -86,8 +86,8 @@ const attackOne = async (event) => {
   enemyHP -= charDam;
 
   // enemy attack
-  if (Math.random() < 0.99) {
-    var enemyDamDone = enemyDam + 90;
+  if (Math.random() < 0.5) {
+    var enemyDamDone = enemyDam;
   } else {
     var enemyDamDone = 0;
   };
@@ -106,17 +106,17 @@ const attackTwo = async (event) => {
       break;
     case '/images/beast.jpeg':
       var charClass = 'Barbarian';
-      var atkMult = 1.2;
+      var atkMult = 2.4;
       break;
     case '/images/hunter.jpg':
       var charClass = 'Hunter';
-      var atkMult = 1;
+      var atkMult = 2;
       break;
   };
 
   // character attack
   if (charClass !== 'Mage') {
-    if (Math.random() < 0.5) {
+    if (Math.random() < 0.6) {
       var charDam = (characterDam * atkMult);
     } else {
       var charDam = 0;
@@ -127,7 +127,7 @@ const attackTwo = async (event) => {
   };
 
   // enemy attack
-  if (Math.random() < 0.5) {
+  if (Math.random() < 0.6) {
     var enemyDamDone = enemyDam;
   } else {
     var enemyDamDone = 0;
@@ -143,28 +143,29 @@ const attackThree = async (event) => {
   switch (charImage) {
     case '/images/mage.jpg':
       var charClass = 'Mage';
-      var atkMult = 1.2;
+      var atkMult = 1.5;
       break;
     case '/images/beast.jpeg':
       var charClass = 'Barbarian';
-      var atkMult = 1;
+      var atkMult = .5;
       break;
     case '/images/hunter.jpg':
       var charClass = 'Hunter';
-      var atkMult = 1;
+      var atkMult = 1.2;
       break;
   };
 
   // character attack
-  if (Math.random() < 0.9) {
-    var charDam = ((characterDam + 20) * atkMult);
+  if (Math.random() < 0.75) {
+    var charDam = (characterDam * atkMult);
   } else {
     var charDam = 0;
   };
   enemyHP -= charDam;
 
   // enemy attack
-  if (Math.random() < 0.5) {
+  const enemyChance = (charClass !== 'Barbarian') ? 0.5 : 0.1
+  if (Math.random() < enemyChance) {
     var enemyDamDone = enemyDam;
   } else {
     var enemyDamDone = 0;
@@ -184,7 +185,7 @@ const attackFour = async (event) => {
       break;
     case '/images/beast.jpeg':
       var charClass = 'Barbarian';
-      var atkMult = 0.5;
+      var atkMult = 1;
       break;
     case '/images/hunter.jpg':
       var charClass = 'Hunter';
@@ -193,7 +194,9 @@ const attackFour = async (event) => {
   };
 
   // character attack
-  if (Math.random() < 0.99) {
+  const enemyChance = (charClass === 'Barbarian') ? 0.3 : 0.1;
+  const playerChance = (charClass === 'Mage') ? 0.99 : 0.7;
+  if (Math.random() < playerChance) {
     var charDam = (characterDam * atkMult);
   } else {
     var charDam = 0;
@@ -201,7 +204,7 @@ const attackFour = async (event) => {
   enemyHP -= charDam;
 
   // enemy attack
-  if (Math.random() < 0.1) {
+  if (Math.random() < enemyChance) {
     var enemyDamDone = enemyDam;
   } else {
     var enemyDamDone = 0;
@@ -213,7 +216,11 @@ const attackFour = async (event) => {
 
 // runs on page load, 
 const init = () => {
-
+  if (screen.width < 700) {
+    document.getElementById('mobile').innerHTML = `<section id="attackResult"></section>`
+  } else {
+    document.getElementById('desktop').innerHTML = `<section id="attackResult"></section>`
+  }
   // document.getElementById('charHP').innerHTML = character.characterHP;
   document.getElementById('charCard').innerHTML = `
   <h2>${character.name}</h2>
