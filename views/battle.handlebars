@@ -1,6 +1,9 @@
 {{!-- <header id="battle-header">
   <h1 id="choose-attack">Choose your attack...</h1>
 </header> --}}
+<section id="mobile">
+
+</section>
 <main class="container" id="battle-field">
   <section class="player" id="user">
     <div>
@@ -21,8 +24,11 @@
       <button id="attack4">Attack4</button>
     </div>
   </section>
+  <section id="desktop">
+
+  </section>
   <section>
-    <h2 id="choose-attack" class=" ">Choose your attack...</h2>
+    
     <div class="animate__animated hide alert" id="user-alert">
       <p>{{character.character_name}} attacked,</p>
       <p>{{enemy.character_name}} lost {{character.damage}} hp</p>
@@ -49,4 +55,5 @@
 </main>
 <script src="/js/battleMechanics.js"></script>
 <script src="/js/setAttacks.js"></script>
-{{!-- <script type="text/javascript" src="/js/battleAnimation.js"></script> --}}
+{{!--
+<script type="text/javascript" src="/js/battleAnimation.js"></script> --}}

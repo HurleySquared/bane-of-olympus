@@ -241,31 +241,31 @@ const init = () => {
   // Write depending on if character hit or missed
   if (character.charDamDone) {
     document.getElementById('attackResult').innerHTML += `
-    <div class="animate__animated hide" id="user-alert">
-      <h2>${character.name} attacked,</h2>
-      <h2>${character.enemyName} lost ${character.charDamDone} hp</h2>
-    </div>`;
+    <h2 class="animate__animated hide" id="user-alert">
+      <div class="atkRes">${character.name} attacked,</div>
+      <div class="atkRes">${character.enemyName} lost ${character.charDamDone} hp</div>
+    </h2>`;
   } else {
     document.getElementById('attackResult').innerHTML += `
-    <div class="animate__animated hide" id="user-alert">
-      <h2>${character.name} missed!</h2>
-    </div>
+    <h2 class="animate__animated hide" id="user-alert">
+      <div class="atkRes">${character.name} missed!</div>
+    </h2>
     `
   };
 
   // Write depending on if enemy hit or missed
   if (character.enemyDamDone) {
     document.getElementById('attackResult').innerHTML += `
-      <div class="animate__animated hide" id="enemy-alert">
-        <h2>${character.enemyName} attacked,</h2>
-        <h2>${character.name} lost ${character.enemyDamDone} hp</h2>
-      </div>
+      <h2 class="animate__animated hide" id="enemy-alert">
+        <div class="atkRes">${character.enemyName} attacked,</div>
+        <div class="atkRes">${character.name} lost ${character.enemyDamDone} hp</div>
+      </h2>
     `;
   } else {
     document.getElementById('attackResult').innerHTML += `
-    <div class="animate__animated hide" id="enemy-alert">
-      <h2>${character.enemyName} missed!</h2>
-    </div>
+    <h2 class="animate__animated hide" id="enemy-alert">
+      <div class="atkRes">${character.enemyName} missed!</div>
+    </h2>
     `
   };
 
