@@ -44,7 +44,7 @@ const signupFormHandler = async (event) => {
     if (response.ok && newGame.ok) {
       document.location.replace('/');
     } else {
-      alert('Failed to sign up.');
+      alert('Your password must be atleast 8 characters long and use a valid email');
     }
   }
 };
