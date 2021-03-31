@@ -33,7 +33,7 @@ h2 {
   font-weight: 700;
   font-family: "Caesar Dressing", cursive;
   margin-bottom: 8px;
-  text-shadow: 4px 4px var(--sandstone);
+  text-shadow: 4px 2px var(--sandstone);
 }
 
 div a {
@@ -342,9 +342,20 @@ a {
 
 #mobile {
   display: flex;
-  justify-self: center;
+  justify-content: center;
   text-align: center;
 }
+
+.user-alert {
+  text-align: center;
+}
+
+#mainBody {
+  margin-top: 40px;
+}
+
+
+
 
 
 
@@ -360,6 +371,25 @@ a {
   .user-alert {
     text-align: center;
   }
+
+  #mobile {
+    height: 200px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 30px;
+    text-shadow: 4px 1px var(--sandstone);
+  }
+
+  .navi a {
+    font-size: 20px;
+  }
+
+  #mainBody {
+    margin-top: 0px;
+  }
 }
-
-

@@ -183,6 +183,18 @@ const attackFour = async (event) => {
   saveFight(characterHP, charDam, enemyHP, enemyDamDone);
 };
 
+
+if (screen.width < 700) {
+  document.getElementById('mobile').innerHTML = `<section id="attackResult">
+    <h2 id="choose-attack" class=" ">Choose your attack...</h2>
+    </section>`
+} else {
+  document.getElementById('desktop').innerHTML = `<section id="attackResult">
+    <h2 id="choose-attack" class=" ">Choose your attack...</h2>
+    </section>`
+}
+
+
 document.getElementById('attack1').addEventListener('click', attackOne);
 document.getElementById('attack2').addEventListener('click', attackTwo);
 document.getElementById('attack3').addEventListener('click', attackThree);
