@@ -143,16 +143,17 @@ router.get('/leaderboards', async (req, res) => {
       ],
     });
     const leaderboard = await JSON.parse(JSON.stringify(leaderboardData));
-    const leaderArray = [];
+    const firstLeaderArray = [];
     for (const eachUser of leaderboard) {
       const usersGame = await Game.findOne({
         where: { user_id: eachUser.id }
       })
-      leaderArray.push([eachUser.username, usersGame.score]);
+      firstLeaderArray.push([eachUser.username, usersGame.score]);
     };
-    await leaderArray.sort((a, b) => {
+    await firstLeaderArray.sort((a, b) => {
       return b[1] - a[1];
     });
+    const leaderArray = firstLeaderArray.slice(0, 14);
     res.render("leaderboard", {
       loggedIn,
       leaderArray,
