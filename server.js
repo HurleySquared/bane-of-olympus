@@ -4,6 +4,7 @@ const express = require("express");
 const session = require("express-session");
 require("dotenv").config();
 const exphbs = require("express-handlebars");
+var compression = require('compression')
 
 // routes
 const routes = require("./controllers");
@@ -33,7 +34,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
-
+app.use(compression())
 // Starts the server to begin listening
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () =>

@@ -29,9 +29,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/battle', async (req, res) => {
+router.get('/battle/:id', async (req, res) => {
   try {
-    const getChar = await Characters.findOne({ where: { game_id: req.session.game_id } });
+    const getChar = await Characters.findOne({ where: { id: req.params.id } });
     const loggedIn = req.session.loggedIn;
     const ranEnemy = await Enemies.findOne({ where: { id: Math.floor(Math.random() * 3 + 1) } });
     const character = JSON.parse(JSON.stringify(getChar));
@@ -87,20 +87,18 @@ router.get('/login', (req, res) => {
 });
 
 
+router.get('/character/create', withAuth, getGame, async (req, res) => {
+  const loggedIn = req.session.loggedIn;
+  const userGame = await JSON.parse(JSON.stringify(req.game));
+  res.render('character-create', {
+    loggedIn,
+    userGame
+  })
+});
+
 // must be logged in withAuth, will show character select handlebars
 router.get('/characterselect', withAuth, getGame, async (req, res) => {
   const loggedIn = req.session.loggedIn;
-  // const getGame = await Game.findOne({
-  //   where: {
-  //     user_id: req.session.user_id
-  //   },
-  //   include: [
-  //     {
-  //       model: Characters,
-  //       attributes: ['id'],
-  //     }
-  //   ]
-  // });
   const userGame = await JSON.parse(JSON.stringify(req.game));
   const userData = await User.findOne({
     where: {
@@ -112,22 +110,22 @@ router.get('/characterselect', withAuth, getGame, async (req, res) => {
   })
   const sendUser = await JSON.parse(JSON.stringify(userData));
 
-  if (userGame.character !== null) {
-    const gameData = await Characters.findOne({
-      where: {
-        game_id: req.session.game_id
-      },
-    });
-    const sendChar = await JSON.parse(JSON.stringify(gameData));
+  const gameData = await Characters.findAll({
+    where: {
+      game_id: req.session.game_id
+    },
+  });
+  const sendChar = await JSON.parse(JSON.stringify(gameData));
+  if (userGame.character == null) {
+    res.render('character-create', {
+      loggedIn,
+      userGame
+    })
+  } else {
     res.render('character-select', {
       loggedIn,
       sendUser,
       sendChar
-    })
-  } else {
-    res.render('character-create', {
-      loggedIn,
-      userGame
     })
   }
 })
@@ -136,6 +134,7 @@ router.get('/leaderboards', async (req, res) => {
   try {
     const loggedIn = req.session.loggedIn;
     const leaderboardData = await User.findAll({
+      attributes: ['username', 'id'],
       include: [
         {
           model: Game,
@@ -168,7 +167,7 @@ router.get('/defeat', async (req, res) => {
   try {
     const loggedIn = req.session.loggedIn;
 
-    res.render("defeat", {loggedIn})
+    res.render("defeat", { loggedIn })
   } catch (err) {
     console.log(err);
     res.status(500).json(err)
