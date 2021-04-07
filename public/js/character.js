@@ -15,7 +15,7 @@ const newCharCreate = async (event) => {
       headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
-      document.location.replace('/battle');
+      document.location.replace('/characterselect');
     } else {
       alert('failed to post');
     }

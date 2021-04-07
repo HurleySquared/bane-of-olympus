@@ -1,29 +1,28 @@
+<a class="newChar" href="/character/create">Create New Character</a>
 <h2>{{sendUser.username}}, select your character for battle</h2>
+{{#each sendChar}}
 <section class="container">
   <div class="card" id="character-card">
     {{!-- <div class="card-image"> --}}
-      <figure id="card1" class="image">
-        <img src="{{sendChar.image}}" alt="">
+      <figure class="image">
+        <img id="{{id}}" src="{{image}}">
       </figure>
       {{!--
     </div> --}}
     <div class="card-content">
       <div class="media">
         <div class="media-content">
-          <p class="title is-4">{{sendChar.character_name}}</p>
+          <p class="title is-4">{{character_name}}</p>
         </div>
       </div>
       <div class="content">
         <ul>
-          <li>Damage: {{sendChar.damage}}</li>
-          <li>Hit Points: {{sendChar.health}}</li>
+          <li>Damage: {{damage}}</li>
+          <li>Hit Points: {{health}}</li>
         </ul>
       </div>
     </div>
   </div>
   <script src="/js/charSelect.js"></script>
 </section>
-{{!-- <a href="/battle" id="charSelectButton">Commence Battle</a> --}}
-{{!-- {{#each character as |character|}}
-{{> character}}
-{{/each}} --}}
+{{/each}}
